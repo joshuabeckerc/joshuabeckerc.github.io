@@ -188,6 +188,13 @@ a:hover{color:#030429}
 </div></div>
 </div>
 
+<div id="linkedin" style="border:3px ridge #679aab;padding:5px;background-color:#fff;background-image:linear-gradient(90deg,rgba(103,154,171,.4) 50%,transparent 50%),linear-gradient(rgba(103,154,171,.4) 50%,transparent 50%);background-size:16px 16px">
+<div style="padding:6px;border:1px solid #030429;background-color:#f4f9ff;background-image:radial-gradient(#bcd6ef 1.2px,transparent 1.4px);background-size:10px 10px">
+<div style="padding:4px;background:lightblue;border:1px solid #030429;border-radius:5px;text-align:center;font-size:16px;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000">LINKEDIN</div>
+<div style="margin-top:6px;font-size:13px;display:flex;flex-direction:column;gap:6px"><sc-for list="{{ linkedinPosts }}" as="p" hint-placeholder-count="1"><p style="margin:0"><b>{{ p.d }}</b> <a href="{{ p.href }}" target="_blank" rel="noopener" style-hover="font-style:italic;letter-spacing:1px">{{ p.t }}</a></p></sc-for>
+<a href="{{ linkedinHref }}" target="_blank" rel="noopener" style="align-self:flex-end;font-size:12px" style-hover="font-style:italic;letter-spacing:1px">see all on LinkedIn ↗</a></div>
+</div></div>
+
 <sc-if value="{{ full }}" hint-placeholder-val="{{ true }}"><img src="assets/v3/div-bubbles.png" alt="" style="display:block;width:100%"></sc-if>
 
 <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:stretch"><sc-if value="{{ full }}" hint-placeholder-val="{{ true }}"><div style="flex:1 1 260px;min-width:0;border:3px ridge #679aab;padding:5px;background-color:#fff;background-image:linear-gradient(90deg,rgba(103,154,171,.4) 50%,transparent 50%),linear-gradient(rgba(103,154,171,.4) 50%,transparent 50%);background-size:16px 16px">
@@ -446,6 +453,10 @@ class Component extends DCLogic {
         { d: 'JUN 2026', t: "started undergrad research in Dr. Yong Shi's lab on a Clark Pinnacle Stipend." },
         { d: 'SPRING 2026', t: 'tour-guide robot demo. also built MaterialFlow on the side.' },
         { d: 'FALL 2025', t: 'smart watering system with a team of 3.' }
+      ],
+      // newest first; keep the 3 most recent (full list lives in Work Documents\LinkedIn\Posts)
+      linkedinPosts: [
+        { d: 'OCT 20', t: 'presented my summer research at the Stevens Research Symposium', href: 'https://www.linkedin.com/feed/update/urn:li:activity:7518373934921183233/' }
       ],
       todos: [
         { t: 'maintain a 3.9 GPA freshman year', done: true }, { t: 'Stevens Career Expo #1', done: true },
