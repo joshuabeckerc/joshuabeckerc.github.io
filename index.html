@@ -191,12 +191,11 @@ a:hover{color:#030429}
 <div id="linkedin" style="border:3px ridge #679aab;padding:5px;background-color:#fff;background-image:linear-gradient(90deg,rgba(103,154,171,.4) 50%,transparent 50%),linear-gradient(rgba(103,154,171,.4) 50%,transparent 50%);background-size:16px 16px">
 <div style="padding:6px;border:1px solid #030429;background-color:#f4f9ff;background-image:radial-gradient(#bcd6ef 1.2px,transparent 1.4px);background-size:10px 10px">
 <div style="padding:4px;background:lightblue;border:1px solid #030429;border-radius:5px;text-align:center;font-size:16px;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000">LINKEDIN</div>
-<div style="margin-top:6px;font-size:13px;display:flex;flex-direction:column;gap:8px"><sc-for list="{{ linkedinPosts }}" as="p" hint-placeholder-count="1"><a href="{{ p.href }}" target="_blank" rel="noopener" style="display:block;color:#030429;text-decoration:none;background:#fff;border:1px solid #030429;box-shadow:2px 2px 0 #030429;padding:5px" style-hover="background:#eef6ff">
-<img src="{{ p.img1 }}" alt="{{ p.alt1 }}" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 30%;border:1px solid #030429">
-<div style="display:flex;gap:4px;margin-top:4px"><img src="{{ p.img2 }}" alt="{{ p.alt2 }}" style="display:block;width:50%;min-width:0;aspect-ratio:4/3;object-fit:cover;border:1px solid #030429"><img src="{{ p.img3 }}" alt="{{ p.alt3 }}" style="display:block;width:50%;min-width:0;aspect-ratio:4/3;object-fit:cover;border:1px solid #030429"></div>
-<div style="margin-top:5px;font-size:12px;color:#3a5378"><b style="color:#030429">{{ p.d }}</b> ・ {{ p.t }}</div>
-<p style="margin:3px 0 0;line-height:1.35">{{ p.blurb }}</p>
-<div style="margin-top:4px;color:blue;font-weight:700">read the full post ↗</div></a></sc-for>
+<div style="margin-top:6px;font-size:13px;display:flex;flex-direction:column;gap:8px"><sc-for list="{{ linkedinPosts }}" as="p" hint-placeholder-count="1"><a href="{{ p.href }}" target="_blank" rel="noopener" aria-label="{{ p.aria }}" style="display:flex;flex-direction:column;gap:5px;color:#030429;text-decoration:none;background:#fff;border:1px solid #030429;padding:6px;transition:transform .2s" style-hover="transform:translateY(-2px);box-shadow:4px 4px 0 #679aab">
+<img src="{{ p.img }}" alt="{{ p.alt }}" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid #030429">
+<span style="font-size:12px;color:#3a5378">{{ p.d }}</span>
+<p style="margin:0;line-height:1.4">{{ p.hook }}</p>
+<span style="color:blue;font-weight:700">read the full post ↗</span></a></sc-for>
 <a href="{{ linkedinHref }}" target="_blank" rel="noopener" style="align-self:flex-end;font-size:12px" style-hover="font-style:italic;letter-spacing:1px">see all on LinkedIn ↗</a></div>
 </div></div>
 
@@ -461,11 +460,9 @@ class Component extends DCLogic {
       ],
       // newest first; keep the 3 most recent (full list lives in Work Documents\LinkedIn\Posts)
       linkedinPosts: [
-        { d: 'OCT 20, 2026', t: 'Stevens Research Symposium', href: 'https://www.linkedin.com/feed/update/urn:li:activity:7518373934921183233/',
-          blurb: "During stroke treatment, doctors guide a thin wire to the clot by feel, and pushing too hard can cause bleeding in the brain. This summer I built a rig and trained a deep learning model to estimate that force with just a camera...",
-          img1: 'assets/linkedin/01-symposium.jpg', alt1: 'Me next to my research poster at the symposium',
-          img2: 'assets/linkedin/01-rig.jpg', alt2: 'The data collection rig',
-          img3: 'assets/linkedin/01-wire.jpg', alt3: 'Robot arm pressing the guidewire into the load cell' }
+        { d: 'OCT 20, 2026', href: 'https://www.linkedin.com/feed/update/urn:li:activity:7518373934921183233/', aria: 'Open my LinkedIn post about the Stevens Research Symposium',
+          hook: "I'm excited to share that I presented my summer research at the Stevens Research Symposium!",
+          img: 'assets/linkedin/01-wire.jpg', alt: 'Robot arm pressing the guidewire into the load cell' }
       ],
       todos: [
         { t: 'maintain a 3.9 GPA freshman year', done: true }, { t: 'Stevens Career Expo #1', done: true },
