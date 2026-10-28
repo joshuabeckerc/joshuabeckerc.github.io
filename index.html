@@ -8,332 +8,271 @@
 <body>
 <x-dc>
 <helmet>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joshua Becker · Mechanical Engineering</title>
+<meta name="description" content="Joshua Becker, mechanical engineering student at Stevens Institute of Technology. Projects, research, experience, and resume.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&amp;display=swap">
-<script src="./image-slot.js"></script>
-<title>Joshua Becker · Mechanical Engineering Portfolio</title>
-<meta name="description" content="Joshua Becker, mechanical engineering student at Stevens. Research, projects, and resume.">
-<link rel="icon" href="assets/v3/logo-sonic-head.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
 <style>
-html,body{margin:0}
-body{font-family:'Kosugi Maru',Tahoma,Verdana,sans-serif;font-size:17px;zoom:1.12;line-height:1.3;color:#030429;background:#3a7bd5}
-*{box-sizing:border-box}
-a{color:blue;text-decoration:none}
-a:hover{color:#030429}
-::-webkit-scrollbar{width:8px}::-webkit-scrollbar-thumb{background:#679aab;border-radius:4px}
-@keyframes lcd{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-@keyframes blink{0%,60%{opacity:1}61%,100%{opacity:.2}}
-@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
-/* phone only (columns already stacked): show welcome + research before nav/contact/about */
-@media (max-width:810px){main{order:1!important}
-/* phone only: after the main column, show About me, Contact, LinkedIn, then everything else in source order */
-[data-cols]{flex-direction:column!important;align-items:stretch!important}[data-cols]>aside,[data-about-row]{display:contents!important}
-[data-cols]>*,[data-cols]>aside>*,[data-about-row]>*{flex:none!important;order:10}
-#about{order:2!important}#contact{order:3!important}#linkedin{order:4!important;margin-bottom:34px}
-aside[data-screen-label="02 Left"]{order:2!important}
-[data-blinkies] img:not([src$="bl-hydrated.png"]):not([src$="bl-music.png"]):not([src$="bl-tooslow.png"]):not([src$="bl-youareyou.png"]){display:none!important}
-#welcome div:has(> div > img[alt="Joshua Becker"]){min-height:135px!important}
-#welcome div:has(> img[alt="Joshua Becker"]){width:125px!important;height:125px!important}}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:#111214;color:#F6EEF0;font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#F6EEF0;text-decoration:none}
+a:hover{color:#B76E79}
+::selection{background:#B76E79;color:#111214}
+:root{color-scheme:dark;scrollbar-color:#3B3E45 #111214}
+::-webkit-scrollbar{width:10px;height:10px;background:#111214}
+::-webkit-scrollbar-thumb{background:#3B3E45;border-radius:10px;border:2px solid #111214}
+::-webkit-scrollbar-button{display:none}
 </style>
 </helmet>
-<div style="position:relative;min-height:100vh;overflow-x:hidden;padding:18px 10px 40px;background:#5aa0e8 url('assets/v3/sky.png') center top/cover fixed">
-<sc-if value="{{ full }}" hint-placeholder-val="{{ true }}"><div aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;z-index:0">
-<img src="assets/v3/bubble-10.png" alt="" style="position:absolute;left:2%;top:12%;width:150px;opacity:.85;animation:bob 6s ease-in-out infinite">
-<img src="assets/v3/bubble-11.png" alt="" style="position:absolute;right:1%;top:48%;width:170px;opacity:.8;animation:bob 7s ease-in-out 1s infinite">
-<img src="assets/v3/bubble-1.png" alt="" style="position:absolute;left:4%;bottom:6%;width:90px;opacity:.7;animation:bob 5s ease-in-out .5s infinite">
-<img src="assets/v3/flare-9.png" alt="" style="position:absolute;right:12%;top:4%;width:90px;opacity:.9">
-</div></sc-if>
 
-<div style="position:relative;z-index:1;max-width:1400px;margin:0 auto">
+<div style="position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden">
+<svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#A1A6B0" style="display:block">
+<defs><pattern id="pgrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" stroke-width="0.5"></path></pattern></defs>
+<rect width="1440" height="900" fill="url(#pgrid)" stroke="none" opacity="0.07"></rect>
+<sc-if value="{{ showCad }}" hint-placeholder-val="{{ true }}">
+<g opacity="0.16" stroke-width="1">
+<line x1="1060" y1="70" x2="1060" y2="830" stroke-dasharray="28 6 4 6"></line>
+<line x1="680" y1="450" x2="1440" y2="450" stroke-dasharray="28 6 4 6"></line>
+<circle cx="1060" cy="450" r="300"></circle>
+<circle cx="1060" cy="450" r="210"></circle>
+<circle cx="1060" cy="450" r="90"></circle>
+<circle cx="1060" cy="450" r="255" stroke-dasharray="10 6"></circle>
+<circle cx="1315" cy="450" r="14"></circle><circle cx="1187.5" cy="229.2" r="14"></circle><circle cx="932.5" cy="229.2" r="14"></circle><circle cx="805" cy="450" r="14"></circle><circle cx="932.5" cy="670.8" r="14"></circle><circle cx="1187.5" cy="670.8" r="14"></circle>
+<path d="M760 450V822M1360 450V822M760 810H1360M760 810l10-4v8zM1360 810l-10-4v8z" stroke-width="0.8"></path>
+<path d="M1187.5 229.2L1290 130H1380" stroke-width="0.8"></path>
+</g>
+<g opacity="0.22" fill="#A1A6B0" stroke="none" font-family="Geist Mono, monospace" font-size="13" letter-spacing="1">
+<text x="1060" y="800" text-anchor="middle">Ø 600.00</text>
+<text x="1296" y="124">6× Ø28 THRU</text>
+<text x="1296" y="142">EQ SP ON Ø510</text>
+</g>
+</sc-if>
+</svg>
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 45%,transparent 0%,rgba(17,18,20,0.55) 60%,#111214 100%)"></div>
+</div>
 
-<header id="top" data-screen-label="01 Header" style="position:relative;border:3px ridge #679aab;border-radius:10px 10px 0 0;overflow:hidden;background:#cfe6fb">
-<sc-if value="{{ full }}" hint-placeholder-val="{{ true }}"><img src="assets/v3/banner-stripes.png" alt="" style="display:block;width:100%;height:clamp(130px,15vw,230px);object-fit:cover;object-position:left 35%"></sc-if>
-<sc-if value="{{ lite }}" hint-placeholder-val="{{ false }}"><img src="assets/v3/banner-sky.png" alt="" style="display:block;width:100%;height:clamp(130px,15vw,230px);object-fit:cover;object-position:center 35%"></sc-if>
-<div style="position:absolute;right:3%;bottom:6%;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:4px">
-<h1 style="margin:0;font-family:'Kosugi Maru',sans-serif;font-weight:700;font-size:clamp(26px,5vw,54px);line-height:1;color:#fff;text-shadow:-2px 0 #3134aa,0 2px #383738,2px 0 #3134aa,0 -2px #383738,0 0 6px #3134aa">JOSHUA BECKER</h1>
-<span style="padding:2px 10px;background:rgba(255,255,255,.85);border:1px solid #030429;border-radius:5px;font-size:clamp(12px,1.6vw,16px)">mechanical engineering @ stevens ・ 機械工学</span>
+<div style="position:relative;z-index:1">
+
+<header style="position:sticky;top:0;z-index:5;background:rgba(17,18,20,0.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #3B3E45">
+<div style="max-width:1120px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+<a href="#top" style="font-weight:600;font-size:15px;letter-spacing:-0.01em">Joshua Becker</a>
+<nav style="display:flex;gap:22px;font-size:14px;color:#A1A6B0;flex-wrap:wrap;justify-content:flex-end">
+<a href="#work" style="color:#A1A6B0" style-hover="color:#F6EEF0">Work</a>
+<a href="#experience" style="color:#A1A6B0" style-hover="color:#F6EEF0">Experience</a>
+<a href="#about" style="color:#A1A6B0" style-hover="color:#F6EEF0">About</a>
+<a href="assets/Joshua-Becker-Resume.pdf" target="_blank" rel="noopener" style="color:#B76E79" style-hover="color:#F6EEF0">Resume</a>
+</nav>
 </div>
 </header>
-<sc-if value="{{ full }}" hint-placeholder-val="{{ true }}"><div data-blinkies style="display:flex;flex-wrap:wrap;gap:4px;padding:5px;background:#030429;border:3px ridge #679aab;border-top:0">
-<img src="assets/v3/bl-gottagofast.png" alt="gotta go fast" style="display:block;flex:1 1 140px;min-width:0;height:28px;object-fit:fill;image-rendering:pixelated"><img src="assets/v3/bl-mathnerd.png" alt="math nerd" style="display:block;flex:1 1 140px;min-width:0;height:28px;object-fit:fill;image-rendering:pixelated"><img src="assets/v3/bl-dreamcast.png" alt="dreamcast" style="display:block;flex:1 1 140px;min-width:0;height:28px;object-fit:fill;image-rendering:pixelated"><img src="assets/v3/bl-hydrated.png" alt="stay hydrated" style="display:block;flex:1 1 140px;min-width:0;height:28px;object-fit:fill;image-rendering:pixelated"><img src="assets/v3/bl-music.png" alt="music" style="display:block;flex:1 1 140px;min-width:0;height:28px;object-fit:fill;image-rendering:pixelated"><img src="assets/v3/bl-tetris.png" alt="tetris" style="display:block;flex:1 1 140px;min-width:0;height:28px;object-fit:fill;image-rendering:pixelated"><img src="assets/v3/bl-tooslow.png" alt="you're too slow" style="display:block;flex:1 1 140px;min-width:0;height:28px;object-fit:fill;image-rendering:pixelated"><img src="assets/v3/bl-youareyou.png" alt="you are you" style="display:block;flex:1 1 140px;min-width:0;height:28px;object-fit:fill;image-rendering:pixelated">
-</div></sc-if>
 
-<div data-cols style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px;margin-top:8px">
-
-<aside data-screen-label="02 Left" style="flex:1 1 260px;max-width:100%;display:flex;flex-direction:column;gap:8px;order:1">
-
-
-<div style="border:3px ridge #679aab;padding:5px;border-radius:{{ navRadius }};background-color:#fff;background-image:linear-gradient(90deg,rgba(103,154,171,.4) 50%,transparent 50%),linear-gradient(rgba(103,154,171,.4) 50%,transparent 50%);background-size:16px 16px">
-<div style="position:relative;padding:6px;border:1px solid #030429;background-color:#f4f9ff;background-image:radial-gradient(#bcd6ef 1.2px,transparent 1.4px);background-size:10px 10px">
-<sc-if value="{{ full }}" hint-placeholder-val="{{ true }}"><img src="assets/v3/sonic-point-up.png" alt="" style="position:absolute;right:-14px;top:-46px;width:70px;pointer-events:none"></sc-if>
-<div style="padding:4px;background:lightblue;border:1px solid #030429;border-radius:5px;text-align:center;font-size:16px;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000">NAVIGATION</div>
-<nav style="display:flex;flex-direction:column;gap:6px;margin-top:6px">
-<a href="#welcome" style="display:block;padding:3px 6px;font-weight:700;color:#fff;background:linear-gradient(89deg,#679aab,transparent);border:1px solid #000;border-radius:4px;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000;transition:letter-spacing .5s" style-hover="color:#030429;font-style:italic;letter-spacing:1.25px;text-decoration:underline wavy;text-shadow:1px 1px 0 #fff,-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff">⌂ home</a>
-<a href="#projects" style="display:block;padding:3px 6px;font-weight:700;color:#fff;background:linear-gradient(89deg,#679aab,transparent);border:1px solid #000;border-radius:4px;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000;transition:letter-spacing .5s" style-hover="color:#030429;font-style:italic;letter-spacing:1.25px;text-decoration:underline wavy;text-shadow:1px 1px 0 #fff,-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff">✦ projects</a>
-<a href="#experience" style="display:block;padding:3px 6px;font-weight:700;color:#fff;background:linear-gradient(89deg,#679aab,transparent);border:1px solid #000;border-radius:4px;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000;transition:letter-spacing .5s" style-hover="color:#030429;font-style:italic;letter-spacing:1.25px;text-decoration:underline wavy;text-shadow:1px 1px 0 #fff,-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff">✦ experience</a>
-<a href="#skills" style="display:block;padding:3px 6px;font-weight:700;color:#fff;background:linear-gradient(89deg,#679aab,transparent);border:1px solid #000;border-radius:4px;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000;transition:letter-spacing .5s" style-hover="color:#030429;font-style:italic;letter-spacing:1.25px;text-decoration:underline wavy;text-shadow:1px 1px 0 #fff,-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff">✦ skills</a>
-<a href="#updates" style="display:block;padding:3px 6px;font-weight:700;color:#fff;background:linear-gradient(89deg,#679aab,transparent);border:1px solid #000;border-radius:4px;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000;transition:letter-spacing .5s" style-hover="color:#030429;font-style:italic;letter-spacing:1.25px;text-decoration:underline wavy;text-shadow:1px 1px 0 #fff,-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff">✦ updates</a>
-<a href="#contact" style="display:block;padding:3px 6px;font-weight:700;color:#fff;background:linear-gradient(89deg,#679aab,transparent);border:1px solid #000;border-radius:4px;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000;transition:letter-spacing .5s" style-hover="color:#030429;font-style:italic;letter-spacing:1.25px;text-decoration:underline wavy;text-shadow:1px 1px 0 #fff,-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff">✉ contact</a>
-<a href="{{ resumeHref }}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:4px;padding:5px 8px;font-size:14px;font-weight:700;color:#030429;text-decoration:none;background:#d4d0c8;border:2px outset #fff;box-shadow:1px 1px 0 #000" style-hover="background:#e4e0d8" style-active="border-style:inset">↓ download resume (PDF)</a>
-</nav></div></div>
-
-<div id="contact" data-screen-label="07 Contact" style="position:relative;border:3px ridge #679aab;padding:5px;background-color:#fff;background-image:linear-gradient(90deg,rgba(103,154,171,.4) 50%,transparent 50%),linear-gradient(rgba(103,154,171,.4) 50%,transparent 50%);background-size:16px 16px">
-<div style="padding:6px;border:1px solid #030429;background-color:#f4f9ff;background-image:radial-gradient(#bcd6ef 1.2px,transparent 1.4px);background-size:10px 10px">
-<div style="padding:4px;background:lightblue;border:1px solid #030429;border-radius:5px;text-align:center;font-size:16px;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000">CONTACT ME</div>
-<img src="assets/v3/rush-super.png" alt="" style="position:absolute;right:-10px;top:-30px;width:56px;pointer-events:none">
-<div style="margin-top:6px;font-size:13px;display:flex;flex-direction:column;gap:5px">
-<div><b>email</b><br><a href="{{ mailHref }}" style="overflow-wrap:anywhere" style-hover="font-style:italic;letter-spacing:1px">{{ email }}</a></div>
-<div><b>linkedin</b><br><a href="{{ linkedinHref }}" target="_blank" rel="noopener" style="overflow-wrap:anywhere" style-hover="font-style:italic;letter-spacing:1px">{{ linkedinLabel }}</a></div>
-<div><b>handshake</b><br><a href="{{ handshakeHref }}" target="_blank" rel="noopener" style="overflow-wrap:anywhere" style-hover="font-style:italic;letter-spacing:1px">{{ handshakeLabel }}</a></div>
+<section id="top" data-screen-label="Intro" style="min-height:calc(100vh - 61px);box-sizing:border-box;display:flex;align-items:center">
+<div style="max-width:1120px;width:100%;margin:0 auto;padding:80px 24px;box-sizing:border-box">
+<div style="font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:0.12em;color:#B76E79;text-transform:uppercase">Stevens Institute of Technology · Class of 2029</div>
+<h1 style="margin:20px 0 0;font-size:clamp(48px,9vw,104px);line-height:0.95;font-weight:600;letter-spacing:-0.045em">Joshua Becker</h1>
+<p style="margin:28px 0 0;max-width:560px;font-size:clamp(18px,2.2vw,22px);line-height:1.5;color:#A1A6B0;font-weight:300;text-wrap:pretty">Mechanical engineering student at Stevens, seeking a Spring 2027 co-op.</p>
+<div style="margin-top:40px;display:flex;flex-wrap:wrap;gap:12px">
+<a href="#work" style="display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 22px;background:#F6EEF0;color:#111214;border-radius:6px;font-size:15px;font-weight:500" style-hover="background:#B76E79;color:#111214">View work <span style="font-family:'Geist Mono',monospace">↓</span></a>
+<a href="assets/Joshua-Becker-Resume.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;height:46px;padding:0 22px;border:1px solid #3B3E45;border-radius:6px;font-size:15px;font-weight:500;background:rgba(17,18,20,0.6)" style-hover="border-color:#B76E79;color:#F6EEF0">Resume (PDF)</a>
+<a href="mailto:joshuabeckerc@gmail.com" style="display:inline-flex;align-items:center;height:46px;padding:0 22px;border:1px solid #3B3E45;border-radius:6px;font-size:15px;font-weight:500;background:rgba(17,18,20,0.6)" style-hover="border-color:#B76E79;color:#F6EEF0">Email</a>
 </div>
-<sc-if value="{{ lite }}" hint-placeholder-val="{{ false }}"><img src="assets/v3/sonic-point-back.png" alt="" style="display:block;width:76px;margin:2px 0 -4px auto"></sc-if>
-</div></div>
+</div>
+</section>
 
-<div id="linkedin" style="border:3px ridge #679aab;padding:5px;background-color:#fff;background-image:linear-gradient(90deg,rgba(103,154,171,.4) 50%,transparent 50%),linear-gradient(rgba(103,154,171,.4) 50%,transparent 50%);background-size:16px 16px">
-<div style="padding:6px;border:1px solid #030429;background-color:#f4f9ff;background-image:radial-gradient(#bcd6ef 1.2px,transparent 1.4px);background-size:10px 10px">
-<div style="padding:4px;background:lightblue;border:1px solid #030429;border-radius:5px;text-align:center;font-size:16px;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000">LINKEDIN</div>
-<div style="margin-top:6px;font-size:13px;display:flex;flex-direction:column;gap:8px"><sc-for list="{{ linkedinPosts }}" as="p" hint-placeholder-count="1"><a href="{{ p.href }}" target="_blank" rel="noopener" aria-label="{{ p.aria }}" style="display:flex;flex-direction:column;gap:5px;color:#030429;text-decoration:none;background:#fff;border:1px solid #030429;padding:6px;transition:transform .2s" style-hover="transform:translateY(-2px);box-shadow:4px 4px 0 #679aab">
-<img src="{{ p.img }}" alt="{{ p.alt }}" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid #030429">
-<span style="font-size:12px;color:#3a5378">{{ p.d }}</span>
-<p style="margin:0;line-height:1.4">{{ p.hook }}</p>
-<span style="color:blue;font-weight:700">read the full post ↗</span></a></sc-for>
-<a href="{{ linkedinHref }}" target="_blank" rel="noopener" style="align-self:flex-end;font-size:12px" style-hover="font-style:italic;letter-spacing:1px">see all on LinkedIn ↗</a></div>
-</div></div>
-
-
-
-
-<sc-if value="{{ full }}" hint-placeholder-val="{{ true }}"><div style="position:relative;display:flex;justify-content:center"><img src="assets/v3/px-sonic-board.png" alt="" style="width:120px;image-rendering:pixelated;animation:bob 3s ease-in-out infinite"></div>
+<section id="work" data-screen-label="Work" style="background:#111214;border-top:1px solid #3B3E45">
+<div style="max-width:1120px;margin:0 auto;padding:96px 24px">
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ projects }}" as="p" hint-placeholder-count="4">
+<sc-if value="{{ p.groupStart }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;padding:{{ p.groupPad }} 0 24px;border-bottom:1px solid #3B3E45">
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#B76E79">{{ p.groupKicker }}</div>
+<h2 style="margin:0;font-size:32px;font-weight:600;letter-spacing:-0.03em">{{ p.groupTitle }}</h2>
+</div>
+<span style="font-size:14px;color:#A1A6B0">{{ p.groupNote }}</span>
+</div>
 </sc-if>
-<div id="updates" style="position:relative;border:3px ridge #679aab;padding:5px;border-radius:0 10px 0 0;background-color:#fff;background-image:linear-gradient(90deg,rgba(103,154,171,.4) 50%,transparent 50%),linear-gradient(rgba(103,154,171,.4) 50%,transparent 50%);background-size:16px 16px">
-<sc-if value="{{ lite }}" hint-placeholder-val="{{ false }}"><img src="assets/v3/sonic-kick.png" alt="" style="position:absolute;right:-10px;top:-50px;width:74px;z-index:2;pointer-events:none"></sc-if>
-<div style="padding:6px;border:1px solid #030429;background-color:#f4f9ff;background-image:radial-gradient(#bcd6ef 1.2px,transparent 1.4px);background-size:10px 10px">
-<div style="padding:4px;background:lightblue;border:1px solid #030429;border-radius:5px;text-align:center;font-size:16px;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000">UPDATES</div>
-<div style="margin-top:6px;font-size:13px;display:flex;flex-direction:column;gap:6px"><sc-for list="{{ updates }}" as="u" hint-placeholder-count="4"><p style="margin:0"><b>{{ u.d }}</b> {{ u.t }}</p></sc-for></div>
-</div></div>
-<sc-if value="{{ full }}" hint-placeholder-val="{{ true }}"><img src="assets/v3/banner-chao.png" alt="chao" style="display:block;width:100%;border:3px ridge #679aab"></sc-if>
-<div style="border:3px ridge #679aab;padding:5px;border-radius:0 0 0 10px;background-color:#fff;background-image:linear-gradient(90deg,rgba(103,154,171,.4) 50%,transparent 50%),linear-gradient(rgba(103,154,171,.4) 50%,transparent 50%);background-size:16px 16px">
-<div style="padding:6px;border:1px solid #030429;background-color:#f4f9ff;background-image:radial-gradient(#bcd6ef 1.2px,transparent 1.4px);background-size:10px 10px;display:flex;flex-direction:column;align-items:center;gap:6px">
-<div style="align-self:stretch;padding:4px;background:lightblue;border:1px solid #030429;border-radius:5px;text-align:center;font-size:16px;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000">BUTTONS</div>
-<div style="display:flex;justify-content:center;align-items:flex-end;gap:2px"><img src="assets/v3/rush-wave.png" alt="" style="width:46px"><img src="assets/v3/rush-grin.png" alt="" style="width:40px"><img src="assets/v3/rush-point.png" alt="" style="width:46px"></div>
-<div style="align-self:stretch;display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px 6px;background:#fffbd6;border:2px dashed #3134aa;border-radius:6px"><b style="font-size:13px;color:#3134aa">★ link back to me! ★</b><div style="transform:scale(1.5);transform-origin:center;margin:8px 0"><a href="#top" style="box-sizing:border-box;width:88px;height:31px;display:flex;align-items:center;gap:3px;padding:0 4px;background:linear-gradient(#3134aa,#030429);border:1px solid #000;outline:1px solid #679aab;outline-offset:-3px;text-decoration:none"><img src="assets/v3/logo-sonic-head.png" alt="" style="width:20px;height:20px;object-fit:contain"><span style="display:flex;flex-direction:column;line-height:1;font-size:9px;font-weight:700;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000"><span>JOSHUA</span><span style="color:#9fe3ff">BECKER</span></span></a></div></div>
-<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3px"><sc-for list="{{ buttons }}" as="b" hint-placeholder-count="3"><img src="{{ b.src }}" alt="{{ b.alt }}" style="display:block;max-width:150px"></sc-for></div>
-
-</div></div>
-</aside>
-
-<main style="flex:999 1 440px;min-width:0;display:flex;flex-direction:column;gap:8px;order:2">
-<section id="welcome" data-screen-label="03 Welcome" style="border:3px ridge #679aab;padding:5px;background-color:#fff;background-image:linear-gradient(90deg,rgba(103,154,171,.4) 50%,transparent 50%),linear-gradient(rgba(103,154,171,.4) 50%,transparent 50%);background-size:16px 16px">
-<div style="padding:10px;border:1px solid #030429;background-color:#f4f9ff;background-image:radial-gradient(#bcd6ef 1.2px,transparent 1.4px);background-size:10px 10px;display:flex;flex-direction:column;gap:8px">
-
-<div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px">
-<div style="flex:1 1 280px;display:flex;flex-direction:column;align-items:center;gap:6px">
-<h2 style="margin:0;text-align:center;white-space:nowrap;font-size:22px;color:#fff;text-shadow:-2px 0 #3134aa,0 1px #383738,2px 0 #3134aa,0 -1px #383738">WELCOME! ようこそ！</h2>
-<div style="position:relative;align-self:stretch;min-height:200px;display:flex;justify-content:center;align-items:center">
-<sc-if value="{{ full }}" hint-placeholder-val="{{ true }}"><img src="assets/v3/sonic-thumbs-sa2.png" alt="" aria-hidden="true" style="position:absolute;left:0;bottom:0;height:100%;max-width:60%;object-fit:contain;object-position:left bottom;pointer-events:none"></sc-if>
-<div style="position:relative;flex:none;width:190px;height:190px;box-shadow:3px 3px 0 #030429;border:3px solid blue;background:#e6eef8"><img src="assets/me/avatar.png" alt="Joshua Becker" style="display:block;width:100%;height:100%;object-fit:cover"></div>
+<article id="{{ p.artId }}" style="border-bottom:1px solid #3B3E45;scroll-margin-top:72px">
+<div role="button" tabindex="0" aria-expanded="{{ p.isOpen }}" onClick="{{ p.toggle }}" onKeyDown="{{ p.key }}" style="display:flex;flex-wrap:wrap;gap:28px 40px;padding:32px 0;cursor:pointer;outline:none" style-hover="background:rgba(59,62,69,0.18)">
+<div style="flex:1 1 300px;max-width:440px;aspect-ratio:16/10;border-radius:6px;overflow:hidden;background:#18191c">
+<img src="{{ p.img }}" alt="{{ p.alt }}" style="width:100%;height:100%;object-fit:cover;display:block">
 </div>
-<span style="font-size:13px;font-weight:700;color:#1f7a0a"><span style="animation:blink 1.4s steps(1) infinite">●</span> available spring 2027</span>
-
+<div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;gap:14px;align-items:center;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#A1A6B0;flex-wrap:wrap">
+<span style="color:#B76E79">{{ p.n }}</span><span>{{ p.meta }}</span>
+<sc-if value="{{ p.featured }}" hint-placeholder-val="{{ false }}"><span style="padding:3px 8px;border:1px solid #B76E79;border-radius:999px;color:#B76E79;letter-spacing:0.06em">Featured</span></sc-if>
 </div>
-<p style="flex:1 1 320px;min-width:0;margin:0;padding:10px;background:whitesmoke;border:1px solid #000;border-radius:5px;text-align:left;text-wrap:pretty">Hi! I'm <b>Joshua</b>, a mechanical engineering student at Stevens Institute of Technology (class of 2029). I've built sensor rigs, designed parts in SolidWorks, and trained deep learning models for medical device research. This summer I researched guidewire contact force estimation for stroke therapy.<br><br>I'm looking for a <b>Spring 2027 co-op in aerospace, hardware, or medical devices</b>. Look around, click a project for the full case file, and <a href="{{ resumeHref }}" target="_blank" rel="noopener" style="text-decoration:underline">download my resume</a> or <a href="{{ linkedinHref }}" target="_blank" rel="noopener" style="text-decoration:underline">find me on LinkedIn</a> ★</p>
-</div>
-
-</div></section>
-
-<sc-if value="{{ full }}" hint-placeholder-val="{{ true }}"><img src="assets/v3/div-flowers.png" alt="" style="display:block;width:100%;height:auto"></sc-if>
-
-<section id="projects" data-screen-label="04 Projects" style="border:3px ridge #679aab;padding:5px;background-color:#fff;background-image:linear-gradient(90deg,rgba(103,154,171,.4) 50%,transparent 50%),linear-gradient(rgba(103,154,171,.4) 50%,transparent 50%);background-size:16px 16px">
-<div style="position:relative;padding:8px;border:1px solid #030429;background-color:#f4f9ff;background-image:radial-gradient(#bcd6ef 1.2px,transparent 1.4px);background-size:10px 10px;display:flex;flex-direction:column;gap:8px">
-<div style="padding:4px;background:lightblue;border:1px solid #030429;border-radius:5px;text-align:center;font-size:17px;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000">★ FEATURED RESEARCH ★</div>
-<sc-for list="{{ featured }}" as="p" hint-placeholder-count="1">
-<div role="button" tabIndex="0" onClick="{{ p.open }}" onKeyDown="{{ p.key }}" aria-label="{{ p.aria }}" style="cursor:pointer;display:flex;flex-wrap:wrap;gap:10px;padding:8px;background:#fff;border:2px solid blue;transition:transform .2s" style-hover="transform:translateY(-2px);box-shadow:4px 4px 0 #679aab">
-<div style="flex:1 1 220px;aspect-ratio:4/3;border:1px solid #030429;background:#e6eef8;overflow:hidden"><img src="assets/research/rig.jpg" alt="Guidewire data-collection rig" style="display:block;width:100%;height:100%;object-fit:cover"></div>
-<div style="flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:6px">
-<span style="font-size:12px;color:#3a5378">{{ p.status }}</span>
-<b style="font-size:19px;color:#030429">{{ p.title }}</b>
-<span style="font-size:14px;text-wrap:pretty">{{ p.summary }}</span>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px"><sc-for list="{{ metrics }}" as="m" hint-placeholder-count="4"><div style="padding:6px 8px;background:#fff;border:2px solid #3134aa;border-radius:4px;font-family:Verdana,Tahoma,sans-serif"><b style="display:block;font-size:17px;color:#3134aa">{{ m.v }}</b><span style="font-size:12px;color:#3a5378">{{ m.l }}</span></div></sc-for></div>
-<span style="font-size:13px;color:blue">open case file ▸</span>
-</div></div>
+<h3 style="margin:0;font-size:clamp(24px,3vw,30px);font-weight:600;letter-spacing:-0.025em;line-height:1.15">{{ p.title }}</h3>
+<p style="margin:0;font-size:16px;line-height:1.6;color:#A1A6B0;text-wrap:pretty">{{ p.summary }}</p>
+<div style="display:flex;flex-wrap:wrap;gap:20px 32px;margin-top:6px">
+<sc-for list="{{ p.stats }}" as="s" hint-placeholder-count="3">
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'Geist Mono',monospace;font-size:20px;color:#F6EEF0">{{ s.v }}</span><span style="font-size:13px;color:#A1A6B0">{{ s.l }}</span></div>
 </sc-for>
-<div style="display:flex;align-items:center;gap:8px;margin-top:4px"><div style="flex:1;padding:4px;background:lightblue;border:1px solid #030429;border-radius:5px;text-align:center;font-size:17px;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000">PROJECTS</div><sc-if value="{{ full }}" hint-placeholder-val="{{ true }}"><img src="assets/v3/sonic-gamecube.png" alt="" style="width:64px;margin:-30px 0 -6px"></sc-if></div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:8px">
-<sc-for list="{{ others }}" as="p" hint-placeholder-count="3">
-<div role="button" tabIndex="0" onClick="{{ p.open }}" onKeyDown="{{ p.key }}" aria-label="{{ p.aria }}" style="cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:6px;background:#fff;border:1px solid #030429;transition:transform .2s" style-hover="transform:translateY(-2px);box-shadow:4px 4px 0 #679aab">
-<div style="aspect-ratio:4/3;border:1px solid #030429;background:#e6eef8;overflow:hidden"><sc-if value="{{ p.hasImg }}" hint-placeholder-val="{{ false }}"><img src="{{ p.img }}" alt="{{ p.title }}" style="display:block;width:100%;height:100%;object-fit:cover"></sc-if><sc-if value="{{ p.noImg }}" hint-placeholder-val="{{ true }}"><image-slot id="{{ p.thumbId }}" shape="rect" placeholder="{{ p.thumb }}"></image-slot></sc-if></div>
-<span style="font-size:11px;color:#3a5378">{{ p.track }}</span>
-<b style="font-size:15px">{{ p.title }}</b>
-<span style="font-size:13px;text-wrap:pretty">{{ p.summary }}</span>
 </div>
-</sc-for></div>
-</div></section>
-
-
-
-<section id="experience" data-screen-label="05 Experience" style="border:3px ridge #679aab;padding:5px;background-color:#fff;background-image:linear-gradient(90deg,rgba(103,154,171,.4) 50%,transparent 50%),linear-gradient(rgba(103,154,171,.4) 50%,transparent 50%);background-size:16px 16px">
-<div style="padding:8px;border:1px solid #030429;background-color:#f4f9ff;background-image:radial-gradient(#bcd6ef 1.2px,transparent 1.4px);background-size:10px 10px;display:flex;flex-direction:column;gap:8px">
-<div style="padding:4px;background:lightblue;border:1px solid #030429;border-radius:5px;text-align:center;font-size:17px;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000">EXPERIENCE</div>
-<div style="padding:8px 10px;background:#fff;border:1px solid #030429;display:flex;flex-direction:column;gap:3px"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 10px"><b style="font-size:15px;color:#3134aa">Undergraduate Researcher / Lab Assistant</b><span style="font-size:12px;color:#3a5378">JUN 2026 – AUG 2026</span></div><span style="font-size:13px">Dr. Yong Shi's Lab, Stevens</span><span style="font-size:13px;text-wrap:pretty">Built and maintained the lab's data-collection equipment. Led a subteam of high schoolers from Liberty Science Center's Partners in Science program, and presented weekly to faculty, a graduate mentor, and a practicing physician.</span></div>
-<div style="padding:8px 10px;background:#fff;border:1px solid #030429;display:flex;flex-direction:column;gap:3px"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 10px"><b style="font-size:15px;color:#3134aa">Cashier / Cook</b><span style="font-size:12px;color:#3a5378">JAN 2026 – APR 2026</span></div><span style="font-size:13px">Wingstop, Hoboken, NJ</span><span style="font-size:13px;text-wrap:pretty">Ran the register and phone orders during peak rush, closed the store, and used Spanish daily with customers and coworkers.</span></div>
-<div style="padding:8px 10px;background:#fff;border:1px solid #030429;display:flex;flex-direction:column;gap:3px"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 10px"><b style="font-size:15px;color:#3134aa">Warehouse Assistant</b><span style="font-size:12px;color:#3a5378">JUL 2025 – AUG 2025</span></div><span style="font-size:13px">MDC Electrical Contractors, Newark, NJ</span><span style="font-size:13px;text-wrap:pretty">Received, logged and staged electrical supplies for active job sites. This is where the idea for MaterialFlow came from.</span></div>
-<div style="padding:8px 10px;background:#fff;border:1px solid #030429;display:flex;flex-direction:column;gap:3px"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 10px"><b style="font-size:15px;color:#3134aa">Product Demonstrator & Consumer Research Assistant</b><span style="font-size:12px;color:#3a5378">SEP 2023 – MAY 2025</span></div><span style="font-size:13px">Pick Marketing, Bayonne, NJ</span><span style="font-size:13px;text-wrap:pretty">Ran weekend demos and blind taste tests for national brands, mostly in Hispanic grocery stores, while in school full time.</span></div>
-</div></section>
-
-<section id="skills" data-screen-label="05 Skills" style="border:3px ridge #679aab;padding:5px;background-color:#fff;background-image:linear-gradient(90deg,rgba(103,154,171,.4) 50%,transparent 50%),linear-gradient(rgba(103,154,171,.4) 50%,transparent 50%);background-size:16px 16px">
-<div style="padding:8px;border:1px solid #030429;background-color:#f4f9ff;background-image:radial-gradient(#bcd6ef 1.2px,transparent 1.4px);background-size:10px 10px;display:flex;flex-direction:column;gap:8px">
-<div style="padding:4px;background:lightblue;border:1px solid #030429;border-radius:5px;text-align:center;font-size:17px;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000">SKILLS</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:8px">
-<sc-for list="{{ statGroups }}" as="g" hint-placeholder-count="3"><div style="padding:6px 8px;background:#fff;border:1px solid #030429;display:flex;flex-direction:column;gap:5px"><b style="font-size:13px;color:#3134aa">{{ g.name }}</b>
-<sc-for list="{{ g.skills }}" as="s" hint-placeholder-count="4"><div style="display:grid;grid-template-columns:minmax(0,1fr) 34px;gap:2px 6px;align-items:center;font-size:13px"><span>{{ s.n }}</span><span style="text-align:right;color:blue">{{ s.lvText }}</span><div style="grid-column:1/-1;height:9px;border:1px solid #030429;background:#fff"><div style="height:100%;width:{{ s.pct }};background:repeating-linear-gradient(90deg,#679aab 0 6px,#a9d4e2 6px 8px)"></div></div></div></sc-for>
-<sc-if value="{{ g.hasChips }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-wrap:wrap;gap:3px;margin-top:2px"><sc-for list="{{ g.chips }}" as="ch" hint-placeholder-count="3"><span style="padding:0 6px;background:lightblue;border:1px solid #030429;border-radius:4px;font-size:11px">{{ ch }}</span></sc-for></div></sc-if>
-</div></sc-for></div>
-</div></section>
-
-<sc-if value="{{ full }}" hint-placeholder-val="{{ true }}"><div style="display:flex;justify-content:space-between;align-items:flex-end;gap:4px;width:100%"><img src="assets/v3/px-sonic-run.png" alt="" style="width:80px;max-width:13%;min-width:0;height:auto;image-rendering:pixelated"><img src="assets/v3/rush-lean.png" alt="" style="width:56px;max-width:13%;min-width:0;height:auto;image-rendering:pixelated"><img src="assets/v3/px-face-wink.png" alt="" style="width:60px;max-width:13%;min-width:0;height:auto;image-rendering:pixelated"><img src="assets/v3/px-sonic-board.png" alt="" style="width:72px;max-width:13%;min-width:0;height:auto;image-rendering:pixelated"><img src="assets/v3/px-sonic-spin.png" alt="" style="width:66px;max-width:13%;min-width:0;height:auto;image-rendering:pixelated"><img src="assets/v3/px-face-tongue.png" alt="" style="width:58px;max-width:13%;min-width:0;height:auto;image-rendering:pixelated"><img src="assets/v3/px-sonic-thumbs.png" alt="" style="width:56px;max-width:13%;min-width:0;height:auto;image-rendering:pixelated"></div></sc-if>
-</main>
-
-<aside data-screen-label="06 Right" style="flex:1 1 260px;max-width:100%;display:flex;flex-direction:column;gap:8px;order:3">
-<div data-about-row style="display:flex;flex-wrap:wrap;gap:8px;align-items:stretch"><div id="about" style="flex:1 1 260px;min-width:0;border:3px ridge #679aab;padding:5px;background-color:#fff;background-image:linear-gradient(90deg,rgba(103,154,171,.4) 50%,transparent 50%),linear-gradient(rgba(103,154,171,.4) 50%,transparent 50%);background-size:16px 16px">
-<div style="padding:6px;border:1px solid #030429;background-color:#f4f9ff;background-image:radial-gradient(#bcd6ef 1.2px,transparent 1.4px);background-size:10px 10px">
-<div style="padding:4px;background:lightblue;border:1px solid #030429;border-radius:5px;text-align:center;font-size:16px;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000">ABOUT ME</div>
-<div style="margin-top:6px;display:flex;flex-direction:column;gap:5px"><div style="padding:5px 7px;background:#fff;border:1px solid #bcd6ef;border-radius:3px"><b style="display:block;font-size:11px;letter-spacing:.5px;color:#3134aa">EDUCATION</b><span style="display:block;font-size:13px;line-height:1.45;text-wrap:pretty">B.E. Mechanical Engineering, Stevens '29<br>GPA 3.9</span></div><div style="padding:5px 7px;background:#fff;border:1px solid #bcd6ef;border-radius:3px"><span style="display:block;font-size:13px;line-height:1.45;text-wrap:pretty">A.S. General Science, Bergen Community College<br><span style="color:#3a5378">early college program, ~60 credits in high school · GPA 3.9 · May 2025</span></span></div><div style="padding:5px 7px;background:#fff;border:1px solid #bcd6ef;border-radius:3px"><b style="display:block;font-size:11px;letter-spacing:.5px;color:#3134aa">HONORS</b><span style="display:block;font-size:13px;line-height:1.45;text-wrap:pretty">A. James Clark Scholarship<br>Edwin A. Stevens Scholarship</span></div><div style="padding:5px 7px;background:#fff;border:1px solid #bcd6ef;border-radius:3px"><b style="display:block;font-size:11px;letter-spacing:.5px;color:#3134aa">LEADERSHIP</b><span style="display:block;font-size:13px;line-height:1.45;text-wrap:pretty">Clark Cohort Rep<br>LAA Ethnic Student Council Rep</span></div><div style="padding:5px 7px;background:#fff;border:1px solid #bcd6ef;border-radius:3px"><b style="display:block;font-size:11px;letter-spacing:.5px;color:#3134aa">INTERESTED IN</b><span style="display:block;font-size:13px;line-height:1.45;text-wrap:pretty">Medical devices, neuroengineering, BCIs</span></div><div style="padding:5px 7px;background:#fff;border:1px solid #bcd6ef;border-radius:3px"><b style="display:block;font-size:11px;letter-spacing:.5px;color:#3134aa">BASED IN</b><span style="display:block;font-size:13px;line-height:1.45;text-wrap:pretty">Hoboken, NJ<br><span style="color:#3a5378">open to commuting anywhere in NYC/NJ and relocating anywhere in the US</span></span></div></div>
-</div></div>
-
-
-<div style="flex:1 1 260px;min-width:0;border:3px ridge #679aab;padding:5px;background-color:#fff;background-image:linear-gradient(90deg,rgba(103,154,171,.4) 50%,transparent 50%),linear-gradient(rgba(103,154,171,.4) 50%,transparent 50%);background-size:16px 16px">
-<div style="position:relative;padding:6px;border:1px solid #030429;background-color:#f4f9ff;background-image:radial-gradient(#bcd6ef 1.2px,transparent 1.4px);background-size:10px 10px">
-<div style="padding:4px;background:lightblue;border:1px solid #030429;border-radius:5px;text-align:center;font-size:16px;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000">TO-DO</div>
-<div style="margin-top:6px;font-size:13px;display:flex;flex-direction:column;gap:4px"><sc-for list="{{ todos }}" as="t" hint-placeholder-count="5"><div style="display:flex;gap:6px;align-items:baseline"><span style="flex:none;width:13px;height:13px;border:1px solid #030429;background:#fff;font-size:11px;line-height:11px;text-align:center;color:blue">{{ t.mark }}</span><span style="text-decoration:{{ t.deco }}">{{ t.t }}</span></div></sc-for></div>
-<sc-if value="{{ full }}" hint-placeholder-val="{{ true }}"><img src="assets/v3/sonic-thumbs.png" alt="" style="display:block;width:70px;margin:4px 0 -4px auto"></sc-if>
-</div></div>
+<div style="margin-top:auto;padding-top:8px;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:#B76E79">{{ p.btnLabel }} <span style="font-family:'Geist Mono',monospace;display:inline-block;transition:transform .2s;transform:{{ p.chev }}">↓</span></div>
 </div>
-
-
-<sc-if value="{{ full }}" hint-placeholder-val="{{ true }}"><img src="assets/v3/div-bubbles.png" alt="" style="display:block;width:100%"></sc-if>
-
-<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:stretch"><sc-if value="{{ full }}" hint-placeholder-val="{{ true }}"><div style="flex:1 1 260px;min-width:0;border:3px ridge #679aab;padding:5px;background-color:#fff;background-image:linear-gradient(90deg,rgba(103,154,171,.4) 50%,transparent 50%),linear-gradient(rgba(103,154,171,.4) 50%,transparent 50%);background-size:16px 16px">
-<div style="padding:6px;border:1px solid #030429;background-color:#f4f9ff;background-image:radial-gradient(#bcd6ef 1.2px,transparent 1.4px);background-size:10px 10px;display:flex;flex-direction:column;gap:6px">
-<div style="padding:4px;background:lightblue;border:1px solid #030429;border-radius:5px;text-align:center;font-size:16px;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000">♪ SONANDO AHORA</div>
-<img src="assets/v3/winamp.png" alt="winamp" style="display:block;width:100%;border:1px solid #030429">
-<div style="display:flex;align-items:center;gap:6px"><img src="assets/v3/sonic-dj.png" alt="" style="width:70px;flex:none"><div style="min-width:0;font-size:13px;overflow:hidden"><div style="white-space:nowrap;animation:lcd 9s linear infinite">Shoko Nakagawa - Sorairo Days ♪</div><span style="font-size:12px;color:#3a5378">lab playlist ・ 128kbps</span></div></div>
-</div></div></sc-if>
-
-
-<div style="flex:1 1 260px;min-width:0;border:3px ridge #679aab;padding:5px;background-color:#fff;background-image:linear-gradient(90deg,rgba(103,154,171,.4) 50%,transparent 50%),linear-gradient(rgba(103,154,171,.4) 50%,transparent 50%);background-size:16px 16px">
-<div style="padding:6px;border:1px solid #030429;background-color:#f4f9ff;background-image:radial-gradient(#bcd6ef 1.2px,transparent 1.4px);background-size:10px 10px">
-<div style="padding:4px;background:lightblue;border:1px solid #030429;border-radius:5px;text-align:center;font-size:16px;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000">PHOTOS</div>
-<div style="margin-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:8px">
-<figure style="margin:0;padding:5px 5px 4px;background:#fff;border:1px solid #030429;box-shadow:2px 2px 0 #679aab;transform:rotate(-2deg)"><img src="assets/me/nyc.png" alt="Joshua in a bookstore in NYC" style="display:block;width:100%;aspect-ratio:1"><figcaption style="padding-top:3px;font-size:11px;text-align:center">out in NYC</figcaption></figure>
-<figure style="margin:0;padding:5px 5px 4px;background:#fff;border:1px solid #030429;box-shadow:2px 2px 0 #679aab;transform:rotate(2deg)"><img src="assets/me/dc.jpg" alt="Joshua in a Stevens Future Alum shirt in front of the New Jersey pillar at the WWII Memorial in Washington, DC" style="display:block;width:100%;aspect-ratio:1"><figcaption style="padding-top:3px;font-size:11px;text-align:center">repping NJ in DC</figcaption></figure>
 </div>
-<div style="margin-top:8px;display:flex;flex-wrap:wrap;justify-content:center;gap:3px"><img src="assets/v3/bl-tooslow.png" alt="you're too slow" style="display:block"><img src="assets/v3/bl-music.png" alt="music lover" style="display:block"><img src="assets/v3/bl-youareyou.png" alt="you are you" style="display:block"></div></div></div></div>
-
-
-
-<div style="border:3px ridge #679aab;padding:5px;border-radius:0 0 10px 0;background-color:#fff;background-image:linear-gradient(90deg,rgba(103,154,171,.4) 50%,transparent 50%),linear-gradient(rgba(103,154,171,.4) 50%,transparent 50%);background-size:16px 16px">
-<div style="padding:6px;border:1px solid #030429;background-color:#f4f9ff;background-image:radial-gradient(#bcd6ef 1.2px,transparent 1.4px);background-size:10px 10px">
-<div style="padding:4px;background:lightblue;border:1px solid #030429;border-radius:5px;text-align:center;font-size:16px;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000">ESTAMPILLAS</div>
-<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3px;margin-top:6px"><sc-for list="{{ stamps }}" as="s" hint-placeholder-count="6"><img src="{{ s.src }}" alt="{{ s.alt }}" style="display:block;width:99px;height:56px;object-fit:cover"></sc-for></div>
-</div></div>
-
-</aside>
+<sc-if value="{{ p.isOpen }}" hint-placeholder-val="{{ false }}">
+<div id="{{ p.caseId }}" style="padding:8px 0 48px;scroll-margin-top:72px">
+<div style="display:flex;gap:28px;border-bottom:1px solid #3B3E45;margin-bottom:36px;overflow-x:auto">
+<sc-for list="{{ p.tabs }}" as="t" hint-placeholder-count="3">
+<button onClick="{{ t.pick }}" style="background:none;border:none;border-bottom:2px solid {{ t.border }};margin-bottom:-1px;padding:12px 0;font:500 14px Geist,sans-serif;color:{{ t.color }};cursor:pointer">{{ t.label }}</button>
+</sc-for>
 </div>
+<div style="display:flex;flex-direction:column;gap:48px">
+<sc-if value="{{ p.isWalk }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap">
+<div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#B76E79">Walkthrough · {{ walk.pos }}</div>
+<div style="font-size:14px;color:#A1A6B0">{{ walk.role }}</div>
+</div>
+<div style="display:flex;gap:6px;overflow-x:auto;padding-bottom:4px">
+<sc-for list="{{ walk.steps }}" as="w" hint-placeholder-count="9">
+<button onClick="{{ w.pick }}" style="flex:0 0 auto;height:34px;padding:0 12px;border-radius:999px;border:1px solid {{ w.border }};background:{{ w.bg }};color:{{ w.color }};font:500 13px Geist,sans-serif;cursor:pointer;white-space:nowrap">{{ w.short }}</button>
+</sc-for>
+</div>
+<h4 style="margin:8px 0 0;font-size:22px;font-weight:600;letter-spacing:-0.02em">{{ walk.title }}</h4>
+<p style="margin:0;font-size:16px;line-height:1.7;color:#d9d3d6;max-width:72ch;text-wrap:pretty">{{ walk.body }}</p>
+<div style="border:1px solid #3B3E45;border-radius:10px;overflow:hidden;background:#1a1b1e;max-width:760px;width:100%">
+<div style="height:30px;display:flex;align-items:center;gap:6px;padding:0 12px;border-bottom:1px solid #3B3E45"><span style="width:9px;height:9px;border-radius:50%;background:#3B3E45"></span><span style="width:9px;height:9px;border-radius:50%;background:#3B3E45"></span><span style="width:9px;height:9px;border-radius:50%;background:#3B3E45"></span><span style="margin-left:10px;font-family:'Geist Mono',monospace;font-size:11px;color:#6f7480">materialflow / {{ walk.path }}</span></div>
+<div style="position:relative">
+<img src="{{ walk.src }}" alt="{{ walk.alt }}" style="display:block;width:100%;height:auto;pointer-events:none;-webkit-user-drag:none;user-select:none">
+<sc-for list="{{ walk.pins }}" as="pin" hint-placeholder-count="0">
+<div style="position:absolute;left:{{ pin.x }};top:{{ pin.y }};transform:translate(-50%,-50%);width:26px;height:26px;border-radius:50%;background:#B76E79;color:#111214;font:600 13px 'Geist Mono',monospace;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px rgba(183,110,121,0.28),0 2px 8px rgba(0,0,0,0.4)">{{ pin.n }}</div>
+</sc-for>
+</div>
+</div>
+<ol style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px 28px;max-width:760px">
+<sc-for list="{{ walk.pins }}" as="pin" hint-placeholder-count="3">
+<li style="display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:1.5;color:#d9d3d6"><span style="flex:0 0 22px;height:22px;border-radius:50%;border:1px solid #B76E79;color:#B76E79;font:500 12px 'Geist Mono',monospace;display:flex;align-items:center;justify-content:center">{{ pin.n }}</span>{{ pin.label }}</li>
+</sc-for>
+</ol>
+<div style="display:flex;justify-content:space-between;gap:12px;max-width:760px">
+<button onClick="{{ walk.prev }}" disabled="{{ walk.atStart }}" style="height:40px;padding:0 16px;background:none;border:1px solid #3B3E45;border-radius:6px;color:#F6EEF0;font:500 14px Geist,sans-serif;cursor:pointer;opacity:{{ walk.prevOp }}" style-hover="border-color:#B76E79"><span style="font-family:'Geist Mono',monospace;color:#B76E79">←</span> Previous screen</button>
+<button onClick="{{ walk.next }}" disabled="{{ walk.atEnd }}" style="height:40px;padding:0 16px;background:none;border:1px solid #3B3E45;border-radius:6px;color:#F6EEF0;font:500 14px Geist,sans-serif;cursor:pointer;opacity:{{ walk.nextOp }}" style-hover="border-color:#B76E79">Next screen <span style="font-family:'Geist Mono',monospace;color:#B76E79">→</span></button>
+</div>
+</div>
+</sc-if>
+<sc-for list="{{ p.secs }}" as="s" hint-placeholder-count="2">
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#B76E79">{{ s.h }}</div>
+<div style="min-width:0;display:flex;flex-direction:column;gap:24px">
+<p style="margin:0;font-size:16px;line-height:1.7;color:#d9d3d6;max-width:72ch;text-wrap:pretty">{{ s.body }}</p>
+<sc-if value="{{ s.hasFigs }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:32px">
+<sc-for list="{{ s.figs }}" as="f" hint-placeholder-count="1">
+<figure style="margin:0;display:flex;flex-direction:column;gap:10px">
+<img src="{{ f.src }}" alt="{{ f.alt }}" loading="lazy" style="display:block;max-width:min(100%,720px);max-height:480px;width:auto;height:auto;border-radius:6px;pointer-events:none;-webkit-user-drag:none;user-select:none">
+<figcaption style="font-size:13px;line-height:1.5;color:#A1A6B0;text-wrap:pretty">{{ f.cap }}</figcaption>
+</figure>
+</sc-for>
+</div>
+</sc-if>
+</div>
+</div>
+</sc-for>
+<sc-if value="{{ p.showPoster }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-wrap:wrap;gap:20px 48px">
+<div style="flex:0 0 200px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#B76E79;padding-top:4px">{{ p.poster.h }}</div>
+<div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:16px">
+<p style="margin:0;font-size:16px;line-height:1.7;color:#d9d3d6">{{ p.poster.text }}</p>
+<img src="{{ p.poster.img }}" alt="{{ p.poster.h }}" loading="lazy" style="display:block;max-width:min(100%,560px);height:auto;border-radius:6px;pointer-events:none;-webkit-user-drag:none;user-select:none">
+<a href="{{ p.poster.href }}" target="_blank" rel="noopener" style="font-size:14px;color:#B76E79">Open poster (PDF) →</a>
+</div>
+</div>
+</sc-if>
+<div style="display:flex;flex-wrap:wrap;gap:20px 48px">
+<div style="flex:0 0 200px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#B76E79;padding-top:4px">Tools</div>
+<div style="flex:1 1 420px;min-width:0;display:flex;flex-wrap:wrap;gap:8px">
+<sc-for list="{{ p.toolList }}" as="tl" hint-placeholder-count="5"><span style="padding:5px 10px;border:1px solid #3B3E45;border-radius:4px;font-family:'Geist Mono',monospace;font-size:12px;color:#A1A6B0">{{ tl.t }}</span></sc-for>
+</div>
+</div>
+<div style="display:flex;justify-content:space-between;gap:12px;padding-top:24px;border-top:1px solid #3B3E45">
+<sc-if value="{{ p.hasPrev }}" hint-placeholder-val="{{ false }}"><button onClick="{{ p.goPrev }}" style="display:flex;align-items:center;gap:10px;height:44px;padding:0 18px;background:none;border:1px solid #3B3E45;border-radius:6px;color:#F6EEF0;font:500 14px Geist,sans-serif;cursor:pointer" style-hover="border-color:#B76E79"><span style="font-family:'Geist Mono',monospace;color:#B76E79">←</span>{{ p.prevLabel }}</button></sc-if>
+<span style="flex:1"></span>
+<sc-if value="{{ p.hasNext }}" hint-placeholder-val="{{ true }}"><button onClick="{{ p.goNext }}" style="display:flex;align-items:center;gap:10px;height:44px;padding:0 18px;background:#F6EEF0;border:1px solid #F6EEF0;border-radius:6px;color:#111214;font:500 14px Geist,sans-serif;cursor:pointer" style-hover="background:#B76E79;border-color:#B76E79">{{ p.nextLabel }}<span style="font-family:'Geist Mono',monospace">→</span></button></sc-if>
+<sc-if value="{{ p.isLast }}" hint-placeholder-val="{{ false }}"><button onClick="{{ p.toggle }}" style="display:flex;align-items:center;gap:10px;height:44px;padding:0 18px;background:none;border:1px solid #3B3E45;border-radius:6px;color:#F6EEF0;font:500 14px Geist,sans-serif;cursor:pointer" style-hover="border-color:#B76E79">Close case study<span style="font-family:'Geist Mono',monospace;color:#B76E79">↑</span></button></sc-if>
+</div>
+</div>
+</div>
+</sc-if>
+</article>
+</sc-for>
+</div>
+</div>
+</section>
 
-<footer style="margin-top:10px;display:flex;flex-direction:column;align-items:center;gap:6px">
-<sc-if value="{{ full }}" hint-placeholder-val="{{ true }}"><div aria-hidden="true" style="width:100%;height:20px;background:url('assets/v3/div-wave.png') repeat-x center/auto 100%"></div><div style="width:100%;overflow:hidden;background:#030429;border:3px ridge #679aab;color:#9fe3ff;font-size:13px;white-space:nowrap;padding:2px 0"><div style="display:inline-block;animation:lcd 22s linear infinite">★ thanks for visiting ★ looking for a spring 2027 co-op: medical devices & neuroengineering ★ gotta go fast ★</div></div></sc-if>
-<span style="padding:2px 10px;background:rgba(255,255,255,.85);border:1px solid #030429;border-radius:5px;font-size:12px">© 2026 Joshua Becker ・ <a href="#top">back to top ↑</a></span>
+<section id="experience" data-screen-label="Experience" style="background:#111214;border-top:1px solid #3B3E45">
+<div style="max-width:1120px;margin:0 auto;padding:96px 24px">
+<h2 style="margin:0 0 40px;font-size:32px;font-weight:600;letter-spacing:-0.03em">Experience</h2>
+<div style="display:flex;flex-direction:column;border-top:1px solid #3B3E45">
+<div style="display:flex;flex-wrap:wrap;gap:12px 48px;padding:32px 0;border-bottom:1px solid #3B3E45">
+<div style="flex:0 0 200px;display:flex;flex-direction:column;gap:4px;font-family:'Geist Mono',monospace;font-size:13px;color:#A1A6B0"><span style="color:#F6EEF0">Jun – Aug 2026</span><span>Hoboken, NJ</span></div>
+<div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:8px">
+<h3 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-0.015em">Undergraduate Researcher / Lab Assistant</h3>
+<span style="font-size:15px;color:#B76E79">Dr. Yong Shi's Lab, Stevens Institute of Technology</span>
+<p style="margin:4px 0 0;font-size:16px;line-height:1.65;color:#A1A6B0;max-width:68ch;text-wrap:pretty">Built and maintained the lab's data-collection equipment. Led a subteam of high schoolers from Liberty Science Center's Partners in Science program, and presented weekly to faculty, a graduate mentor, and a practicing physician.</p>
+</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px 48px;padding:32px 0;border-bottom:1px solid #3B3E45">
+<div style="flex:0 0 200px;display:flex;flex-direction:column;gap:4px;font-family:'Geist Mono',monospace;font-size:13px;color:#A1A6B0"><span style="color:#F6EEF0">Jul – Aug 2025</span><span>Newark, NJ</span></div>
+<div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:8px">
+<h3 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-0.015em">Warehouse Assistant</h3>
+<span style="font-size:15px;color:#B76E79">MDC Electrical Contractors</span>
+<p style="margin:4px 0 0;font-size:16px;line-height:1.65;color:#A1A6B0;max-width:68ch;text-wrap:pretty">Received, logged and staged electrical supplies for active job sites. Material requests came in by text message and often got lost between the field crews, the warehouse and purchasing. Seeing that problem firsthand is what led me to build MaterialFlow.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="about" data-screen-label="About" style="background:#111214;border-top:1px solid #3B3E45">
+<div style="max-width:1120px;margin:0 auto;padding:96px 24px">
+<h2 style="margin:0 0 40px;font-size:32px;font-weight:600;letter-spacing:-0.03em">Education &amp; skills</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1px;background:#3B3E45;border:1px solid #3B3E45;border-radius:8px;overflow:hidden">
+<div style="background:#111214;padding:28px;display:flex;flex-direction:column;gap:20px">
+<div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#B76E79">Education</div>
+<div style="display:flex;flex-direction:column;gap:4px"><b style="font-size:16px;font-weight:600">Stevens Institute of Technology</b><span style="font-size:15px;color:#A1A6B0">B.E. Mechanical Engineering · Expected 2029</span><span style="font-family:'Geist Mono',monospace;font-size:13px;color:#F6EEF0">GPA 3.9</span></div>
+<div style="display:flex;flex-direction:column;gap:4px"><b style="font-size:16px;font-weight:600">Bergen Community College</b><span style="font-size:15px;color:#A1A6B0">A.S. General Science · May 2025</span><span style="font-size:14px;color:#A1A6B0">Early college program, ~60 credits completed in high school</span><span style="font-family:'Geist Mono',monospace;font-size:13px;color:#F6EEF0">GPA 3.9</span></div>
+</div>
+<div style="background:#111214;padding:28px;display:flex;flex-direction:column;gap:20px">
+<div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#B76E79">Skills</div>
+<div style="display:flex;flex-direction:column;gap:4px"><b style="font-size:14px;font-weight:600">Hardware &amp; fabrication</b><span style="font-size:15px;line-height:1.6;color:#A1A6B0">SolidWorks, 3D printing, Arduino / ESP32, load cells &amp; sensor calibration, sensor integration, multimeter</span></div>
+<div style="display:flex;flex-direction:column;gap:4px"><b style="font-size:14px;font-weight:600">Software</b><span style="font-size:15px;line-height:1.6;color:#A1A6B0">Python, PyTorch, PyQt5, C++, Slurm, Git, Linux</span></div>
+<div style="display:flex;flex-direction:column;gap:4px"><b style="font-size:14px;font-weight:600">Languages</b><span style="font-size:15px;line-height:1.6;color:#A1A6B0">English and Spanish (fluent), Japanese (beginner)</span></div>
+</div>
+<div style="background:#111214;padding:28px;display:flex;flex-direction:column;gap:20px">
+<div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#B76E79">Honors &amp; leadership</div>
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:15px">A. James Clark Scholarship</span><span style="font-size:15px">Edwin A. Stevens Scholarship</span><span style="font-size:15px">Clark Pinnacle Stipend (summer research)</span></div>
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:15px">Clark Cohort Representative</span><span style="font-size:15px">LAA Ethnic Student Council Representative</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact" data-screen-label="Contact" style="border-top:1px solid #3B3E45">
+<div style="max-width:1120px;margin:0 auto;padding:140px 24px 120px">
+<div style="font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:0.12em;color:#B76E79;text-transform:uppercase">Contact</div>
+<h2 style="margin:16px 0 0;font-size:clamp(36px,6vw,64px);font-weight:600;letter-spacing:-0.04em;line-height:1">Let's talk.</h2>
+<p style="margin:20px 0 0;font-size:18px;color:#A1A6B0;max-width:520px;line-height:1.55;font-weight:300">Open to Spring 2027 co-ops. Based in Hoboken, NJ.</p>
+<div style="margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px;max-width:920px">
+<a href="mailto:joshuabeckerc@gmail.com" style="display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid #3B3E45;border-radius:8px;background:rgba(17,18,20,0.7)" style-hover="border-color:#B76E79;color:#F6EEF0"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#A1A6B0;text-transform:uppercase;letter-spacing:0.08em">Email</span><span style="font-size:15px;overflow-wrap:anywhere">joshuabeckerc@gmail.com</span></a>
+<a href="https://www.linkedin.com/in/joshuabeckerc/" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid #3B3E45;border-radius:8px;background:rgba(17,18,20,0.7)" style-hover="border-color:#B76E79;color:#F6EEF0"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#A1A6B0;text-transform:uppercase;letter-spacing:0.08em">LinkedIn</span><span style="font-size:15px">in/joshuabeckerc</span></a>
+<a href="https://app.joinhandshake.com/profiles/joshuabeckerc" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid #3B3E45;border-radius:8px;background:rgba(17,18,20,0.7)" style-hover="border-color:#B76E79;color:#F6EEF0"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#A1A6B0;text-transform:uppercase;letter-spacing:0.08em">Handshake</span><span style="font-size:15px">joshuabeckerc</span></a>
+<a href="assets/Joshua-Becker-Resume.pdf" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid #3B3E45;border-radius:8px;background:rgba(17,18,20,0.7)" style-hover="border-color:#B76E79;color:#F6EEF0"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#A1A6B0;text-transform:uppercase;letter-spacing:0.08em">Resume</span><span style="font-size:15px">Download PDF</span></a>
+</div>
+</div>
+<footer style="border-top:1px solid #3B3E45;background:rgba(17,18,20,0.85)">
+<div style="max-width:1120px;margin:0 auto;padding:24px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;color:#A1A6B0">
+<span>© 2026 Joshua Becker</span>
+<a href="classic/" style="color:#A1A6B0" style-hover="color:#B76E79">The fun version of this site →</a>
+</div>
 </footer>
-</div>
+</section>
 
-<sc-if value="{{ isOpen }}" hint-placeholder-val="{{ false }}">
-<div role="dialog" aria-modal="true" aria-label="{{ cur.title }}" onClick="{{ close }}" style="position:fixed;inset:0;z-index:100;display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding:clamp(8px,4vw,40px) 10px;background:rgba(3,4,41,.45)">
-<div onClick="{{ stop }}" style="width:100%;max-width:{{ modalW }};margin:auto 0;border:3px ridge #679aab;padding:5px;background-color:#fff;background-image:linear-gradient(90deg,rgba(103,154,171,.4) 50%,transparent 50%),linear-gradient(rgba(103,154,171,.4) 50%,transparent 50%);background-size:16px 16px">
-<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:3px 3px 3px 8px;background:linear-gradient(90deg,#0a246a,#a6caf0);color:#fff;font-family:Tahoma,sans-serif;font-weight:700;font-size:13px"><span style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">case_file_{{ cur.num }}.txt — {{ cur.title }}</span><button onClick="{{ close }}" aria-label="Close" style="flex:none;width:44px;height:28px;cursor:pointer;background:#d4d0c8;border:2px outset #fff;font-weight:700;font-size:13px">✕</button></div>
-<div style="padding:14px;border:1px solid #030429;background-color:#f4f9ff;background-image:radial-gradient(#bcd6ef 1.2px,transparent 1.4px);background-size:10px 10px;display:flex;flex-direction:column;gap:12px">
-<span style="font-size:13px;color:#3a5378">{{ cur.code }} ・ {{ cur.status }}</span>
-<h2 style="margin:0;font-size:clamp(22px,4vw,30px);color:#fff;text-shadow:-2px 0 #3134aa,0 1px #383738,2px 0 #3134aa,0 -1px #383738">{{ cur.title }}</h2>
-<p style="margin:0;font-size:16px;text-wrap:pretty">{{ cur.summary }}</p>
-<sc-if value="{{ isResearch }}" hint-placeholder-val="{{ false }}">
-<div role="tablist" aria-label="Case file sections" style="display:flex;flex-wrap:wrap;gap:2px;border-bottom:2px solid #030429"><sc-for list="{{ tabs }}" as="tb" hint-placeholder-count="3"><button role="tab" aria-selected="{{ tb.sel }}" onClick="{{ tb.go }}" style="min-height:44px;padding:0 18px;margin-bottom:-2px;cursor:pointer;font-family:Tahoma,Verdana,sans-serif;font-size:14px;font-weight:700;color:#030429;background:{{ tb.bg }};border:2px solid #030429;border-bottom-color:{{ tb.bb }};border-radius:6px 6px 0 0">{{ tb.label }}</button></sc-for></div>
-<sc-if value="{{ isOverview }}" hint-placeholder-val="{{ true }}"><div style="width:100%;max-width:640px;margin:0 auto"><sc-for list="{{ heroFig }}" as="f" hint-placeholder-count="1"><figure style="margin:0;border:2px outset #fff;background:#d4d0c8;padding:3px;display:flex;flex-direction:column;gap:3px"><div style="padding:2px 6px;background:linear-gradient(90deg,#0a246a,#a6caf0);color:#fff;font-family:Tahoma,Verdana,sans-serif;font-size:12px;font-weight:700;overflow-wrap:anywhere">{{ f.name }}</div><img src="{{ f.src }}" alt="{{ f.alt }}" style="display:block;width:100%;background:#fff;border:1px solid #808080"><figcaption style="padding:3px 4px 2px;font-family:Verdana,Tahoma,sans-serif;font-size:13px;line-height:1.45;color:#030429;text-wrap:pretty">{{ f.cap }}</figcaption></figure></sc-for></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:6px"><sc-for list="{{ resStats }}" as="m" hint-placeholder-count="4"><div style="padding:8px 10px;background:#fff;border:2px solid #3134aa;border-radius:4px;font-family:Verdana,Tahoma,sans-serif"><b style="display:block;font-size:20px;color:#3134aa">{{ m.v }}</b><span style="font-size:12px;color:#3a5378">{{ m.l }}</span></div></sc-for></div></sc-if>
-<sc-for list="{{ secs }}" as="s" hint-placeholder-count="2"><div style="padding:12px;background:#fff;border:1px solid #030429;display:flex;flex-direction:column;gap:8px"><b style="color:#3134aa;font-size:16px">▸ {{ s.h }}</b><p style="margin:0;font-family:Verdana,Tahoma,sans-serif;font-size:14px;line-height:1.55;text-wrap:pretty">{{ s.body }}</p><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),420px));justify-content:center;gap:10px;align-items:start"><sc-for list="{{ s.figs }}" as="f" hint-placeholder-count="1"><figure style="margin:0;border:2px outset #fff;background:#d4d0c8;padding:3px;display:flex;flex-direction:column;gap:3px"><div style="padding:2px 6px;background:linear-gradient(90deg,#0a246a,#a6caf0);color:#fff;font-family:Tahoma,Verdana,sans-serif;font-size:12px;font-weight:700;overflow-wrap:anywhere">{{ f.name }}</div><img src="{{ f.src }}" alt="{{ f.alt }}" style="display:block;width:100%;background:#fff;border:1px solid #808080"><figcaption style="padding:3px 4px 2px;font-family:Verdana,Tahoma,sans-serif;font-size:13px;line-height:1.45;color:#030429;text-wrap:pretty">{{ f.cap }}</figcaption></figure></sc-for></div></div></sc-for>
-<sc-if value="{{ toolsInBuild }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-wrap:wrap;gap:4px"><sc-for list="{{ cur.tools }}" as="t" hint-placeholder-count="5"><span style="padding:1px 8px;background:lightblue;border:1px solid #030429;border-radius:4px;font-size:13px">{{ t }}</span></sc-for></div></sc-if>
-<sc-if value="{{ isResults }}" hint-placeholder-val="{{ false }}">
-<sc-if value="{{ cur.hasLesson }}" hint-placeholder-val="{{ false }}"><div style="padding:12px;background:#fff;border:1px solid #030429"><b style="color:#3134aa;font-size:16px">▸ what went wrong / what i learned</b><p style="margin:6px 0 0;font-family:Verdana,Tahoma,sans-serif;font-size:14px;line-height:1.55;text-wrap:pretty">{{ cur.lesson }}</p></div></sc-if>
-<sc-if value="{{ cur.hasResult }}" hint-placeholder-val="{{ false }}"><div style="padding:12px;background:#effbe9;border:1px solid #1f7a2a"><b style="color:#1f7a2a;font-size:16px">▸ result</b><p style="margin:6px 0 0;font-family:Verdana,Tahoma,sans-serif;font-size:14px;line-height:1.55;text-wrap:pretty">{{ cur.result }}</p></div></sc-if>
-<sc-if value="{{ hasPoster }}" hint-placeholder-val="{{ false }}"><div style="padding:12px;background:#fff;border:1px solid #030429;display:flex;flex-direction:column;gap:8px"><b style="color:#3134aa;font-size:16px">▸ {{ poster.h }}</b><p style="margin:0;font-family:Verdana,Tahoma,sans-serif;font-size:14px;line-height:1.55">{{ poster.text }}</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:10px;align-items:start">
-<figure style="margin:0;border:2px outset #fff;background:#d4d0c8;padding:3px;display:flex;flex-direction:column;gap:3px"><div style="padding:2px 6px;background:linear-gradient(90deg,#0a246a,#a6caf0);color:#fff;font-family:Tahoma,Verdana,sans-serif;font-size:12px;font-weight:700">poster.pdf</div><sc-if value="{{ posterHasImg }}" hint-placeholder-val="{{ false }}"><a href="{{ poster.href }}" target="_blank" rel="noopener" style="display:block;background:#fff;border:1px solid #808080"><img src="{{ poster.img }}" alt="Poster preview" style="display:block;width:100%"></a></sc-if><sc-if value="{{ posterNoImg }}" hint-placeholder-val="{{ true }}"><a href="{{ poster.href }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:16px;background:#fff;border:1px solid #808080;color:#030429;font-family:Verdana,Tahoma,sans-serif;font-size:14px;text-decoration:none" style-hover="background:#eef5ff"><span style="flex:none;display:flex;align-items:center;justify-content:center;width:48px;height:60px;background:#c4161c;color:#fff;font-weight:700;font-size:13px;border:1px solid #030429;box-shadow:2px 2px 0 #030429">PDF</span><span><b style="display:block">{{ poster.file }}</b><span style="color:blue">open the poster ▸</span></span></a></sc-if></figure>
-<sc-if value="{{ hasPhoto }}" hint-placeholder-val="{{ false }}"><figure style="margin:0;border:2px outset #fff;background:#d4d0c8;padding:3px;display:flex;flex-direction:column;gap:3px"><div style="padding:2px 6px;background:linear-gradient(90deg,#0a246a,#a6caf0);color:#fff;font-family:Tahoma,Verdana,sans-serif;font-size:12px;font-weight:700">symposium.jpg</div><img src="assets/research/symposium.png" alt="Joshua giving a thumbs up next to his poster at the Stevens Research Symposium" style="display:block;width:100%;background:#fff;border:1px solid #808080"><figcaption style="padding:3px 4px 2px;font-family:Verdana,Tahoma,sans-serif;font-size:13px;line-height:1.45;color:#030429">Me with my poster at the symposium, October 7, 2026.</figcaption></figure></sc-if>
-</div>
-<a href="{{ poster.href }}" download="{{ poster.file }}" style="align-self:flex-start;display:flex;align-items:center;gap:6px;min-height:44px;padding:0 16px;background:#d4d0c8;border:2px outset #fff;color:#030429;font-family:Tahoma,Verdana,sans-serif;font-size:14px;font-weight:700" style-active="border-style:inset">⬇ download poster (PDF)</a>
-</div></sc-if>
-<div style="display:flex;flex-wrap:wrap;gap:4px"><sc-for list="{{ cur.tools }}" as="t" hint-placeholder-count="5"><span style="padding:1px 8px;background:lightblue;border:1px solid #030429;border-radius:4px;font-size:13px">{{ t }}</span></sc-for></div>
-</sc-if>
-</sc-if>
-<sc-if value="{{ notResearch }}" hint-placeholder-val="{{ true }}"><div style="position:relative;aspect-ratio:21/9;border:3px solid blue;background:#e6eef8"><sc-for list="{{ caseSlots }}" as="cs" hint-placeholder-count="0"><sc-if value="{{ cs.on }}" hint-placeholder-val="{{ false }}"><image-slot id="{{ cs.id }}" shape="rect" placeholder="{{ cs.label }}"></image-slot></sc-if></sc-for></div>
-<div style="padding:10px;background:#fff;border:1px solid #030429"><b style="color:#3134aa">▸ problem</b><p style="margin:4px 0 0;text-wrap:pretty">{{ cur.problem }}</p></div>
-<div style="padding:10px;background:#fff;border:1px solid #030429"><b style="color:#3134aa">▸ my role</b><p style="margin:4px 0 0;text-wrap:pretty">{{ cur.role }}</p></div>
-<div style="padding:10px;background:#fff;border:1px solid #030429"><b style="color:#3134aa">▸ process</b><div style="margin-top:4px;display:flex;flex-direction:column;gap:5px"><sc-for list="{{ cur.steps }}" as="st" hint-placeholder-count="4"><div style="display:grid;grid-template-columns:26px minmax(0,1fr);gap:6px"><span style="color:blue">{{ st.n }}</span><span style="text-wrap:pretty">{{ st.t }}</span></div></sc-for></div></div>
-<sc-if value="{{ cur.hasLesson }}" hint-placeholder-val="{{ false }}"><div style="padding:10px;background:#fff;border:1px solid #030429"><b style="color:#3134aa">▸ what went wrong / what i learned</b><p style="margin:4px 0 0;text-wrap:pretty">{{ cur.lesson }}</p></div></sc-if>
-<sc-if value="{{ cur.hasResult }}" hint-placeholder-val="{{ false }}"><div style="padding:10px;background:#effbe9;border:1px solid #1f7a2a"><b style="color:#1f7a2a">▸ result</b><p style="margin:4px 0 0;text-wrap:pretty">{{ cur.result }}</p></div></sc-if>
-<div style="display:flex;flex-wrap:wrap;gap:4px"><sc-for list="{{ cur.tools }}" as="t" hint-placeholder-count="5"><span style="padding:1px 8px;background:lightblue;border:1px solid #030429;border-radius:4px;font-size:13px">{{ t }}</span></sc-for></div>
-</sc-if>
-<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><button onClick="{{ prev }}" style="min-height:44px;padding:0 16px;cursor:pointer;background:#d4d0c8;border:2px outset #fff;font-family:Tahoma,sans-serif;font-size:13px">◀ prev</button><span style="font-size:13px">{{ cur.pos }}</span><button onClick="{{ next }}" style="min-height:44px;padding:0 16px;cursor:pointer;background:#d4d0c8;border:2px outset #fff;font-family:Tahoma,sans-serif;font-size:13px">next ▶</button></div>
-</div></div></div>
-</sc-if>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;density&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;full&quot;,&quot;light&quot;],&quot;default&quot;:&quot;full&quot;,&quot;tsType&quot;:&quot;'full' | 'light'&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;email&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;joshuabeckerc@gmail.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;linkedinUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://www.linkedin.com/in/joshuabeckerc/&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;handshakeUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://app.joinhandshake.com/profiles/joshuabeckerc&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;resumeUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;assets/Joshua-Becker-Resume.pdf&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;}}">
-const PROJECTS = [
-  { id: 'guidewire', code: 'MODE 01', num: '01', track: 'RESEARCH', title: 'Guidewire Force Estimation', status: 'UNDERGRAD RESEARCH · JUN–AUG 2026',
-    summary: 'A two-stage PyTorch model that estimates guidewire contact force from camera frames with 19.1 mN mean absolute error.',
-    thumb: '[RIG PHOTO]', hero: '[FIGURE: rig setup, or predicted vs. measured force]',
-    problem: "During endovascular stroke therapy, clinicians steer a guidewire through vessels without a direct measure of how hard it presses on the vessel wall. I'm estimating that contact force from camera images.",
-    role: "Undergraduate researcher on Image-Based Deep Learning for Stroke Therapy in Dr. Yong Shi's lab, funded by a Clark Pinnacle Stipend. I built the rig, collected the data, and trained the models.",
-    process: ['Designed, built, and calibrated an automated data-collection rig: Arduino stepper stage, HX711 load cell, and LED-flash video sync.', 'Modified the HX711 for 8× faster sampling and calibrated it to R² = 1.000 (0.22% max error).', 'Programmed a multithreaded PyQt5 control panel (1,200+ lines) with live force plotting and ~3 ms camera–sensor sync.', 'Trained a two-stage PyTorch model (U-Net segmentation → MLP regressor) on a 24,322-frame dataset.', "Ran GPU training through Slurm on the university's NVIDIA L40S cluster."],
-    lesson: 'I caught a flash-detection bug that was mislabeling frames by up to 5.7 seconds. Fixing the pipeline also cut preprocessing time 6×.',
-    result: '19.1 mN mean absolute error, 3.5× better than baseline. The U-Net reached 0.99 validation Dice at 7.1 ms per frame, 4.7× faster than real time.',
-    tools: ['Python', 'PyTorch', 'U-Net', 'Slurm (HPC)', 'NVIDIA L40S', 'Arduino', 'HX711', 'PyQt5'] },
-  { id: 'robot', code: 'MODE 02', num: '02', track: 'ROBOTICS', title: 'Autonomous Tour-Guide Robot', status: 'ENGR 122 · SPRING 2026 · TEAM OF 3', img: 'assets/robot/exploded.png',
-    summary: 'A mobile robot that drives to sequenced targets using MQTT coordinates, ArUco marker localization, and ultrasonic obstacle avoidance.',
-    thumb: '[ROBOT PHOTO]', hero: '[PHOTO: robot + ArUco bracket + sensor mounts]',
-    problem: 'The robot had to navigate to a sequence of target locations on its own while avoiding obstacles along the way.',
-    role: 'I wrote the navigation code with help from Alexander Kagan and did all of the wiring.',
-    process: ['Streamed x/y target coordinates to the robot over MQTT.', 'Localized the robot with a Dell 4K camera and ArUco markers.', 'Used three ultrasonic sensors for obstacle avoidance.', 'Wrote the navigation logic: atan2 heading control, slow-down and arrival zones, and wall-following around blocked paths.', 'Did all of the wiring, including a solder-free power bus verified with a multimeter.'],
-    lesson: 'Code that works on paper still needs tuning on the real robot. A sensor might pick up a wall early or late, the left sensor might read slightly differently from the right, and one motor might run a little stronger than the other. I tuned all of that through trial and error. Looking back, the early sensor and motor calibration assignments mattered more than I realized: measuring those constants at the start would have saved a lot of guesswork later.', result: 'Reached all 4 targets in order in about 1 to 1.5 minutes, one of the fastest times in our whole year, not just our class.',
-    tools: ['WeMos D1 R2', 'Arduino / C++', 'MQTT', 'ArUco markers', 'Ultrasonic sensors', 'Multimeter'] },
-  { id: 'watering', code: 'MODE 03', num: '03', track: 'IOT', title: 'Smart Watering System', status: 'ENGR 111 · FALL 2025 · TEAM OF 3', img: 'assets/water/assembly.png',
-    summary: 'A self-watering plant device with a waterproof enclosure that publishes sensor readings over MQTT for remote monitoring.',
-    thumb: '[DEVICE PHOTO]', hero: '[PHOTO: enclosure + ESP32 + pump]',
-    problem: 'Plants need watering on a schedule, and their owners need to check on them remotely.',
-    role: 'I modeled the enclosure in SolidWorks, handled the 3D printing, and helped with the code.',
-    process: ['Modeled a waterproof SolidWorks enclosure for the ESP32, pump, and sensors.', 'Programmed the device to publish sensor readings over MQTT for remote monitoring.'],
-    lesson: 'This was my first time using SolidWorks and FlashPrint, so I learned both on the job. Our first enclosure was too big to print in time, and I had to cut it down without losing the parts that held everything in place. Our team also took a while to start communicating well. Next time I would get to know my teammates earlier.', result: 'A working self-watering device that kept a plant alive for about a week while publishing soil moisture, temperature, humidity and light readings over MQTT.', tools: ['SolidWorks', 'FlashPrint', 'ESP32', 'Arduino IDE', 'MQTT / HiveMQ', 'DHT sensor', 'Soil moisture sensor', 'Mini pump'] },
-  { id: 'materialflow', code: 'SIDE QUEST 01', num: '04', track: 'WEB APP', title: 'MaterialFlow', status: 'MATERIAL TRACKING WEB APP · SPRING 2026', img: 'assets/mf/v2-purchase.png',
-    summary: 'A role-based web app that replaces text-message material requests for electrical contractors with a tracked workflow.',
-    thumb: '[APP SCREENSHOT]', hero: '[SCREENSHOTS: request → fulfillment → purchasing]',
-    problem: 'Electrical contractors were requesting materials by text message, with no record of what was asked for, filled, or short.',
-    role: 'I built the app.',
-    process: ['Built it in Next.js with Prisma, first on PostgreSQL and now on SQLite.', 'Set up a 4-role workflow (worker, PM, warehouse, admin): material list → PM approval → warehouse fulfillment → purchase queue.', 'Designed status-tracked lists (draft → submitted → approved → processing → complete).', 'Added per-site inventory tracking and sent anything the warehouse could not fill to purchasing.'],
-    lesson: 'This was the first thing I built end to end and kept improving based on problems I had seen at work. I learned how databases work through PostgreSQL, and how to work with AI as a coding assistant: giving it the right context and clear instructions so the result matches what I have in mind.', result: 'I tested every role myself and demoed the app to my class. I had planned a demo for an electrical contracting company, but that connection fell through before it happened.', tools: ['Next.js', 'Prisma', 'SQLite', 'PostgreSQL', 'AI-assisted development'] }
-];
-const STATS = [
-  { name: 'HARDWARE & FAB', skills: [{ n: 'SolidWorks', lv: 8 }, { n: '3D Printing', lv: 9 }, { n: 'Arduino / ESP32', lv: 8 }, { n: 'Sensors & DAQ', lv: 8 }] },
-  { name: 'SOFTWARE', skills: [{ n: 'Python', lv: 8 }, { n: 'PyTorch', lv: 7 }, { n: 'PyQt5', lv: 7 }, { n: 'Next.js', lv: 6 }, { n: 'C++', lv: 5 }], chips: ['SLURM', 'DOCKER', 'GIT', 'LINUX', 'N8N', 'OLLAMA'] },
-  { name: 'LANGUAGES', skills: [{ n: 'English', lv: 10 }, { n: 'Spanish', lv: 10 }, { n: 'Japanese', lv: 2 }] }
-];
-const ST = (n, a) => ({ src: 'assets/v3/' + n + '.png', alt: a });
-const STAMPS_FULL = [ST('st-sonic-thumbs', 'Sonic stamp'), ST('st-sonic-checker', 'Sonic stamp'), ST('st-chao', 'Chao stamp'), ST('st-oldweb', 'I love old web'), ST('st-electronics', 'I love old electronics'), ST('st-useit', 'Use it'), ST('st-sonic-logo', 'Sonic logo stamp'), ST('st-flash', 'Flash games are games too'), ST('st-kirby', 'Kirby stamp')];
-const STAMPS_LITE = [ST('st-sonic-thumbs', 'Sonic stamp'), ST('st-oldweb', 'I love old web')];
-const BTN_FULL = [ST('btn-html', 'HTML: learn it today')];
-const BTN_LITE = [ST('btn-html', 'HTML: learn it today'), ST('bl-gottagofast', 'gotta go fast'), ST('bl-mathnerd', 'math nerd')];
-const isPh = (v) => !v || /^\[.*\]$/.test(String(v).trim());
-
+<script type="text/x-dc" data-dc-script data-props="{&quot;texture&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;cad&quot;,&quot;grid&quot;],&quot;default&quot;:&quot;cad&quot;,&quot;tsType&quot;:&quot;'cad' | 'grid'&quot;}}">
 const R = 'assets/research/';
 const FG = (src, name, alt, cap) => ({ src: R + src, name, alt, cap });
 const RESEARCH = {
@@ -411,79 +350,126 @@ const MATERIALFLOW = {
     { h: 'inventory and site access', body: 'Inventory is tracked per job site and updates as lists are filled. Workers request access to a project site, and the project manager approves or rejects each request.', figs: [MFF('v2-inventory.png', 'inventory.png', 'Inventory management screen', 'Inventory for one job site.'), MFF('v2-site-requests.png', 'site_requests.png', 'Site access requests with approve and reject buttons', 'Site access requests waiting on the PM.')] },
     { h: 'project chat with AI summaries', body: 'Each project has chat threads for the crew and office. One click generates an AI summary of a thread, so someone catching up can see what was decided, what is in stock, and what is still on order without reading every message.', figs: [MFF('v2-chat.png', 'chat_thread.png', 'Chat thread with an AI summary at the top', 'A thread about a framing delivery, with its AI summary at the top.')] },
     { h: 'admin and audit log', body: 'The admin manages user accounts, and every approval, rejection and change is recorded in an audit log with who did it and when.', figs: [MFF('v2-audit.png', 'audit_log.png', 'Audit log listing user actions with timestamps', 'The audit log.')] },
-    { h: 'the stack', body: 'Next.js runs the front end and back end, and Prisma connects it to the database. The first version used PostgreSQL; the current one runs on SQLite.', figs: [] }
+    { h: 'how I built it', body: 'A full-stack web app with a database behind it, built with an AI coding assistant from my design of the workflow.', figs: [] }
   ],
   results: [],
   poster: null
 };
 const CASES = { guidewire: RESEARCH, robot: ROBOT, watering: WATERING, materialflow: MATERIALFLOW };
+const P = [
+  { id: 'guidewire', n: '01', featured: true, title: 'Guidewire Force Estimation', meta: 'Undergraduate research · Jun–Aug 2026', img: 'assets/research/rig.jpg', alt: 'Data-collection rig with stepper stage, load cell and robot arm holding a guidewire',
+    summary: 'An automated test rig and two-stage PyTorch model that estimate guidewire contact force from camera frames, for endovascular stroke therapy.',
+    result: '19.1 mN mean absolute error, 3.5× better than baseline. The U-Net reached 0.99 validation Dice at 7.1 ms per frame, 4.7× faster than real time.',
+    lesson: 'I caught a flash-detection bug that was mislabeling frames by up to 5.7 seconds. Fixing the pipeline also cut preprocessing time 6×.',
+    tools: ['SolidWorks', 'Arduino', 'HX711', 'Load cell', 'Python', 'PyQt5', 'PyTorch', 'U-Net', 'Slurm (HPC)'] },
+  { id: 'robot', n: '02', title: 'Autonomous Tour-Guide Robot', meta: 'ENGR 122 · Spring 2026 · Team of 3', img: 'assets/robot/exploded.png', alt: 'Exploded SolidWorks view of the robot',
+    summary: 'A tracked robot that drives itself to four targets in order using overhead ArUco localization over MQTT and three ultrasonic sensors for obstacle avoidance.',
+    result: 'Reached all 4 targets in order in about 1 to 1.5 minutes, one of the fastest times in our whole year, not just our class.',
+    lesson: 'Code that works on paper still needs tuning on the real robot. A sensor might pick up a wall early or late, the left sensor might read slightly differently from the right, and one motor might run a little stronger than the other. I tuned all of that through trial and error. Looking back, the early sensor and motor calibration assignments mattered more than I realized: measuring those constants at the start would have saved a lot of guesswork later.',
+    tools: ['WeMos D1 R2', 'MQTT', 'ArUco markers', 'Ultrasonic sensors', 'Multimeter', 'SolidWorks', 'FlashForge Adventurer 3'] },
+  { id: 'watering', n: '03', title: 'Smart Watering System', meta: 'ENGR 111 · Fall 2025 · Team of 3', img: 'assets/water/assembly.png', alt: 'SolidWorks model of the slide-in electronics board next to the mini pump',
+    summary: 'A 3D-printed, four-part enclosure that keeps an ESP32, sensors and pump away from the water, waters the plant below 30% soil moisture, and reports readings over MQTT.',
+    result: 'A working self-watering device that kept a plant alive for about a week while publishing soil moisture, temperature, humidity and light readings over MQTT.',
+    lesson: 'This was my first time using SolidWorks and FlashPrint, so I learned both on the job. Our first enclosure was too big to print in time, and I had to cut it down without losing the parts that held everything in place. Our team also took a while to start communicating well. Next time I would get to know my teammates earlier.',
+    tools: ['SolidWorks', 'FlashPrint', 'ESP32', 'Arduino IDE', 'MQTT / HiveMQ', 'DHT sensor', 'Soil moisture sensor'] },
+  { id: 'materialflow', n: '04', title: 'MaterialFlow', meta: 'Web app · Spring 2026', img: 'assets/mf/v2-purchase.png', alt: 'MaterialFlow purchase queue screen',
+    summary: 'A role-based web app that replaces text-message material requests for electrical contractors with a tracked request, fulfillment and purchasing workflow.',
+    result: 'I tested every role myself and demoed the app to my class. I had planned a demo for an electrical contracting company, but that connection fell through before it happened.',
+    lesson: 'This was the first thing I built end to end and kept improving based on problems I had seen at work. I learned how databases work, and how to work with AI as a coding assistant: giving it the right context and clear instructions so the result matches what I have in mind.',
+    tools: ['Web app', 'AI-assisted development'] }
+];
+const GROUPS = {
+  guidewire: { kicker: 'Research', title: 'Undergraduate research', note: "Dr. Yong Shi's Lab, Stevens", pad: '0' },
+  robot: { kicker: 'Projects', title: 'Projects', note: '', pad: '88px' }
+};
+const MF = 'assets/mf/';
+const WALK = [
+  { short: 'New list', role: 'Field worker', path: 'lists/new', src: 'v2-new-list.png', title: 'A worker builds a material list',
+    body: 'A field worker builds a material list for a project, saves it as a draft, and submits it for review when it is ready.',
+    pins: [[94, 56, 'Add as many line items as the job needs, each with a quantity.'], [25, 90, 'Save a draft and finish it later.'], [75, 90, 'Submitting sends the list to the project manager.']] },
+  { short: 'List status', role: 'Field worker', path: 'lists/riverside', src: 'v2-status.png', title: 'The worker follows each item',
+    body: 'They can follow each list and see the status of every item on it.',
+    pins: [[96, 25, 'Overall status of the list.'], [19, 65, 'Available stock, pulled from inventory.'], [93, 65, 'Per-item status: in stock, partial, or not in stock.']] },
+  { short: 'Approval', role: 'Project manager', path: 'approvals', src: 'v2-approval.png', title: 'The PM approves or rejects',
+    body: 'The project manager approves or rejects each submitted list.',
+    pins: [[50, 21, 'Filter by submitted, approved, rejected, or all.'], [8, 58, 'One click to approve or reject the whole list.'], [94, 48, 'Each item stays pending until the warehouse fills it.']] },
+  { short: 'Warehouse', role: 'Warehouse', path: 'lists', src: 'v2-warehouse.png', title: 'The warehouse fills it item by item',
+    body: 'Approved lists go to the warehouse, which works through them item by item.',
+    pins: [[17, 56, 'Mark each item in stock, partial, or not in stock.'], [50, 23, 'Lists move from approved to processing to complete.']] },
+  { short: 'Purchasing', role: 'Project manager', path: 'purchase-queue', src: 'v2-purchase.png', title: "What the warehouse can't fill gets ordered",
+    body: "Anything the warehouse can't fill moves to the purchase queue.",
+    pins: [[50, 16, 'Running totals for pending, ordered, and received.'], [12, 32, 'Attach a supplier, then mark the item ordered.'], [30, 73, 'Supplier contact and delivery notes stay with the order.'], [94, 9, 'Export the queue to CSV.']] },
+  { short: 'Inventory', role: 'Warehouse', path: 'inventory', src: 'v2-inventory.png', title: 'Inventory per job site',
+    body: 'Inventory is tracked per job site and updates as lists are filled.',
+    pins: [[26, 25, 'Switch between job sites.'], [50, 41, 'Add or update stock by hand.'], [62, 64, 'Quantities with the date each was last changed.']] },
+  { short: 'Site access', role: 'Project manager', path: 'site-requests', src: 'v2-site-requests.png', title: 'Workers request site access',
+    body: 'Workers request access to a project site, and the project manager approves or rejects each request.',
+    pins: [[90, 31, 'Approve or reject each request.'], [50, 82, 'Past decisions stay in the history.']] },
+  { short: 'Chat + AI', role: 'Everyone', path: 'chat/east-wing', src: 'v2-chat.png', title: 'Project chat with AI summaries',
+    body: 'Each project has chat threads for the crew and office. One click generates an AI summary of a thread, so someone catching up can see what was decided, what is in stock, and what is still on order without reading every message.',
+    pins: [[93, 12.5, 'One click generates the summary.'], [40, 24, 'Decisions, stock, and open orders in four lines.'], [70, 52, 'The full thread is still there underneath.']] },
+  { short: 'Audit log', role: 'Admin', path: 'admin/audit', src: 'v2-audit.png', title: 'Every action is logged',
+    body: 'The admin manages user accounts, and every approval, rejection and change is recorded in an audit log with who did it and when.',
+    pins: [[13, 29, 'Who acted, and what they did.'], [88, 29, 'When it happened.']] }
+];
 const TABS = [{ id: 'overview', label: 'Overview' }, { id: 'build', label: 'Build' }, { id: 'results', label: 'Results' }];
 class Component extends DCLogic {
-  state = { open: null, visits: 1, tab: 'overview' };
-  componentDidMount() {
-    try { const v = (parseInt(localStorage.getItem('jb_v3_visits') || '0', 10) || 0) + 1; localStorage.setItem('jb_v3_visits', String(v)); this.setState({ visits: v }); } catch (e) {}
-    this._onKey = (e) => { if (this.state.open == null) return; if (e.key === 'Escape') this.closeP(); else if (e.key === 'ArrowRight') this.step(1); else if (e.key === 'ArrowLeft') this.step(-1); };
-    window.addEventListener('keydown', this._onKey);
+  state = { open: null, tab: 'overview' };
+  toggle(id) {
+    const closing = this.state.open === id;
+    this.setState(closing ? { open: null } : { open: id, tab: 'overview', walk: 0 }, () => {
+      if (!closing) return;
+      const el = document.getElementById('proj-' + id);
+      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 72, behavior: 'smooth' });
+    });
   }
-  componentWillUnmount() { window.removeEventListener('keydown', this._onKey); document.body.style.overflow = ''; }
-  openP(id) { document.body.style.overflow = 'hidden'; this.setState({ open: id, tab: 'overview' }); }
-  closeP() { document.body.style.overflow = ''; this.setState({ open: null }); }
-  step(d) { const i = PROJECTS.findIndex((p) => p.id === this.state.open); if (i < 0) return; this.setState({ open: PROJECTS[(i + d + PROJECTS.length) % PROJECTS.length].id, tab: 'overview' }); }
+  goTab(id, i) {
+    this.setState({ tab: TABS[i].id }, () => {
+      const el = document.getElementById('case-' + id);
+      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 72, behavior: 'smooth' });
+    });
+  }
   renderVals() {
-    const pr = this.props || {};
-    const full = (pr.density ?? 'full') === 'full';
-    const email = pr.email ?? 'joshuabeckerc@gmail.com';
-    const linkedin = pr.linkedinUrl ?? 'https://www.linkedin.com/in/joshuabeckerc/';
-    const handshake = pr.handshakeUrl ?? 'https://app.joinhandshake.com/profiles/joshuabeckerc';
-    const resume = pr.resumeUrl ?? 'assets/Joshua-Becker-Resume.pdf';
-
-    const strip = (u) => String(u).replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
-    const mk = (x) => ({ ...x, hasImg: !!x.img, noImg: !x.img, thumbId: 'thumb-' + x.id, aria: 'Open case study: ' + x.title, open: () => this.openP(x.id), key: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.openP(x.id); } } });
-    const idx = PROJECTS.findIndex((p) => p.id === this.state.open);
-    const c = idx >= 0 ? PROJECTS[idx] : PROJECTS[0];
-    const cs = CASES[c.id];
-    const hasRes = !!(cs && ((cs.results && cs.results.length) || cs.poster || !isPh(c.lesson) || !isPh(c.result)));
-    return {
-      full, lite: !full,
-      navRadius: '10px 0 0 0',
-      email, mailHref: 'mailto:' + email,
-      linkedinHref: linkedin, linkedinLabel: strip(linkedin), handshakeHref: handshake, handshakeLabel: strip(handshake).replace(/^app\./, ''),
-      resumeHref: isPh(resume) ? '#contact' : resume,
-      stamps: full ? STAMPS_FULL : STAMPS_LITE,
-      buttons: full ? BTN_FULL : BTN_LITE,
-      visits: String(this.state.visits).padStart(6, '0'),
-      featured: [mk(PROJECTS[0])],
-      others: PROJECTS.slice(1).map(mk),
-      metrics: [{ v: '19.1 mN', l: 'mean abs. error' }, { v: '3.5×', l: 'better than baseline' }, { v: '0.99', l: 'validation Dice' }, { v: '24,322', l: 'frame dataset' }],
-      statGroups: STATS.map((g) => ({ ...g, hasChips: !!(g.chips && g.chips.length), skills: g.skills.map((s) => ({ ...s, pct: s.lv * 10 + '%', lvText: s.lv >= 10 ? 'MAX' : s.lv + '/10' })) })),
-      updates: [
-        { d: 'OCT 2026', t: 'presented my research poster at the Stevens Research Symposium.' },
-        { d: 'SEP 2026', t: 'started my second year of college.' },
-        { d: 'AUG 2026', t: "wrapped up my summer in Dr. Yong Shi's lab." },
-        { d: 'JUN 2026', t: "started undergrad research in Dr. Yong Shi's lab on a Clark Pinnacle Stipend." },
-        { d: 'SPRING 2026', t: 'tour-guide robot demo. also built MaterialFlow on the side.' },
-        { d: 'FALL 2025', t: 'smart watering system with a team of 3.' }
-      ],
-      // newest first; keep the 3 most recent (full list lives in Work Documents\LinkedIn\Posts)
-      linkedinPosts: [
-        { d: 'OCT 20, 2026', href: 'https://www.linkedin.com/feed/update/urn:li:activity:7518373934921183233/', aria: 'Open my LinkedIn post about the Stevens Research Symposium',
-          hook: "I'm excited to share that I presented my summer research at the Stevens Research Symposium!",
-          img: 'assets/linkedin/01-wire.jpg', alt: 'Robot arm pressing the guidewire into the load cell' }
-      ],
-      todos: [
-        { t: 'maintain a 3.9 GPA freshman year', done: true }, { t: 'Stevens Career Expo #1', done: true },
-        { t: 'SHPE National Convention (October)', done: false }, { t: 'keep a 3.9 GPA sophomore year', done: false }, { t: 'land a Spring 2027 med device co-op', done: false }, { t: 'get my Japanese past lv 2', done: false }, { t: 'practice on the sewing machine', done: false }
-      ].map((t) => ({ ...t, mark: t.done ? '✓' : '', deco: t.done ? 'line-through' : 'none' })),
-      isOpen: idx >= 0,
-      isResearch: !!cs, notResearch: !cs, modalW: cs ? '980px' : '820px', poster: (cs && cs.poster) || {}, hasPoster: !!(cs && cs.poster), posterHasImg: !!(cs && cs.poster && cs.poster.img), posterNoImg: !(cs && cs.poster && cs.poster.img), hasPhoto: !!(cs && cs.poster && cs.poster.photo),
-      isOverview: this.state.tab === 'overview', isResults: this.state.tab === 'results', toolsInBuild: !!cs && !hasRes && this.state.tab === 'build',
-      tabs: TABS.filter((tb) => tb.id !== 'results' || hasRes).map((tb) => { const on = this.state.tab === tb.id; return { ...tb, sel: on ? 'true' : 'false', bg: on ? '#fff' : '#d4d0c8', bb: on ? '#fff' : '#030429', go: () => this.setState({ tab: tb.id }) }; }),
-      secs: cs ? cs[this.state.tab] || [] : [], heroFig: cs ? cs.hero : [],
-      resStats: cs ? cs.stats : [],
-      cur: { ...c, hasLesson: !isPh(c.lesson), hasResult: !isPh(c.result), steps: c.process.map((t, i) => ({ n: String(i + 1).padStart(2, '0'), t })), pos: (idx + 1) + ' / ' + PROJECTS.length },
-      caseSlots: PROJECTS.map((p) => ({ id: 'case-' + p.id, label: p.hero, on: p.id === this.state.open })),
-      close: () => this.closeP(), stop: (e) => e.stopPropagation(), prev: () => this.step(-1), next: () => this.step(1)
+    const tex = this.props.texture ?? 'cad';
+    const { open, tab } = this.state;
+    const ti = TABS.findIndex((t) => t.id === tab);
+    const projects = P.map((p) => {
+      const cs = (typeof CASES !== 'undefined' && CASES[p.id]) || { overview: [], build: [], results: [], stats: [] };
+      const isOpen = open === p.id;
+      const results = [...(cs.results || []), { h: 'outcome', body: p.result, figs: [] }, { h: 'what I learned', body: p.lesson, figs: [] }];
+      const byTab = { overview: cs.overview || [], build: cs.build || [], results };
+      const isWalk = isOpen && tab === 'build' && p.id === 'materialflow';
+      if (isWalk) byTab.build = byTab.build.filter((s) => s.h === 'the stack');
+      const g = GROUPS[p.id];
+      const secs = isOpen ? byTab[tab].map((s) => ({ ...s, hasFigs: !!(s.figs && s.figs.length), figs: s.figs || [] })) : [];
+      return {
+        ...p, isOpen, stats: cs.stats || [],
+        toggle: () => this.toggle(p.id),
+        key: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.toggle(p.id); } },
+        btnLabel: isOpen ? 'Close case study' : 'Read case study',
+        chev: isOpen ? 'rotate(180deg)' : 'none',
+        tabs: TABS.map((t) => ({ ...t, color: tab === t.id ? '#F6EEF0' : '#A1A6B0', border: tab === t.id ? '#B76E79' : 'transparent', pick: () => this.setState({ tab: t.id }) })),
+        caseId: 'case-' + p.id, artId: 'proj-' + p.id, isWalk,
+        groupStart: !!g, groupKicker: g ? g.kicker : '', groupTitle: g ? g.title : '', groupNote: g ? g.note : '', groupPad: g ? g.pad : '0',
+        hasPrev: ti > 0, hasNext: ti < TABS.length - 1, isLast: ti === TABS.length - 1,
+        prevLabel: ti > 0 ? TABS[ti - 1].label : '', nextLabel: ti < TABS.length - 1 ? TABS[ti + 1].label : '',
+        goPrev: () => this.goTab(p.id, ti - 1), goNext: () => this.goTab(p.id, ti + 1),
+        secs, poster: cs.poster || {}, showPoster: isOpen && tab === 'results' && !!cs.poster,
+        toolList: p.tools.map((t) => ({ t }))
+      };
+    });
+    const wi = this.state.walk || 0;
+    const ws = WALK[wi];
+    const setW = (i) => this.setState({ walk: Math.max(0, Math.min(WALK.length - 1, i)) });
+    const walk = {
+      pos: (wi + 1) + ' / ' + WALK.length, role: ws.role, title: ws.title, body: ws.body, path: ws.path,
+      src: MF + ws.src, alt: ws.title,
+      pins: ws.pins.map(([x, y, label], i) => ({ x: x + '%', y: y + '%', label, n: i + 1 })),
+      steps: WALK.map((w, i) => ({ short: (i + 1) + '. ' + w.short, pick: () => setW(i), bg: i === wi ? '#F6EEF0' : 'transparent', color: i === wi ? '#111214' : '#A1A6B0', border: i === wi ? '#F6EEF0' : '#3B3E45' })),
+      prev: () => setW(wi - 1), next: () => setW(wi + 1),
+      atStart: wi === 0, atEnd: wi === WALK.length - 1, prevOp: wi === 0 ? 0.35 : 1, nextOp: wi === WALK.length - 1 ? 0.35 : 1
     };
+    return { projects, walk, showCad: tex === 'cad' };
   }
 }
 </script>
